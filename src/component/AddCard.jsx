@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import MyButton from './UI/Button/MyButton';
 import './AddCard.css';
+import MyInput from './UI/Input/MyInput';
 
 function AddCard({ addNewCard }) {
 	const [newCard, setNewCard] = useState({
@@ -18,36 +20,50 @@ function AddCard({ addNewCard }) {
 
 	const createNewObj = (event) => {
 		event.preventDefault();
-		// console.log({ ...newCard, _id: Date.now() });
+
+		if (
+			!(
+				newCard.name &&
+				newCard.age &&
+				newCard.gender &&
+				newCard.balance
+			)
+		) {
+			alert('Fill all fields');
+			return;
+		}
+
 		addNewCard({
 			...newCard,
 			_id: Date.now(),
 			picture: 'http://placehold.it/32x32',
 		});
-		// const newObj = {
-		// 	...addCard,
-		// 	_id: Date.now(),
-		// };
+		setNewCard({
+			name: '',
+			age: '',
+			gender: '',
+			balance: '',
+		});
 	};
 
 	return (
-		<div>
+		<div className="addCard">
 			<form action="">
-				<input
+				<MyInput
 					type="text"
 					name="name"
 					placeholder="Enter your name"
 					value={newCard.name}
 					onChange={handleChange}
 				/>
-				<input
+				<MyInput
 					type="text"
 					name="age"
 					placeholder="Enter your age"
 					value={newCard.age}
 					onChange={handleChange}
 				/>
-				<input
+				<MyInput
 					type="radio"
 					name="gender"
 					value="male"
@@ -56,7 +72,7 @@ function AddCard({ addNewCard }) {
 					id="male"
 				/>
 				<label htmlFor="male">Male</label>
-				<input
+				<MyInput
 					type="radio"
 					name="gender"
 					value="female"
@@ -66,16 +82,16 @@ function AddCard({ addNewCard }) {
 				/>
 				<label htmlFor="female">Female</label>
 
-				<input
+				<MyInput
 					type="text"
 					name="balance"
 					placeholder="Enter your balance"
 					value={newCard.balance}
 					onChange={handleChange}
 				/>
-				<button type="submit" onClick={createNewObj}>
+				<MyButton type="submit" onClick={createNewObj}>
 					Add new person
-				</button>
+				</MyButton>
 			</form>
 		</div>
 	);
