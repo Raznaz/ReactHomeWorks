@@ -38,6 +38,7 @@ function AddCard({ addNewCard }) {
 			_id: Date.now(),
 			picture: 'http://placehold.it/32x32',
 		});
+
 		setNewCard({
 			name: '',
 			age: '',

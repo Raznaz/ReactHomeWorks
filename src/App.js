@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './App.css';
 import AddCard from './component/AddCard';
 import CardList from './component/CardList';
 import { userData } from './userData';
+import './App.css';
 
 function App() {
 	const [userList, setUserList] = useState(userData);
