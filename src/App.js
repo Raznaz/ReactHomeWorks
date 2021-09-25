@@ -59,7 +59,6 @@ function App() {
 					</div>
 					<div className="filterUserBlock">
 						<h2>Filter&Sort</h2>
-
 						<FilterUser
 							onChange={(e) => {
 								setUserFilter(e.target.value);
