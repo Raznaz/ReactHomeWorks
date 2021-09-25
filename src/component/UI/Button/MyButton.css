@@ -13,3 +13,10 @@ button:hover {
 	cursor: pointer;
 	background-color: rgb(181, 255, 181);
 }
+
+.btnUserDetails {
+	display: block;
+	width: 50%;
+	padding: 5px 20px;
+	background-color: rgb(187, 187, 187);
+}

@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Card.css';
+import MyButton from './UI/Button/MyButton';
+// import Modal from './Modal';
 
-function Card({ person: { name, age, gender, balance, picture } }) {
+function Card({ person, modalWindow }) {
+	const [showDetail, setShowDetail] = useState(false);
+	const { name, age, gender, balance, picture } = person;
+
 	return (
 		<div className="card-item">
 			<div className="card">
@@ -22,6 +27,12 @@ function Card({ person: { name, age, gender, balance, picture } }) {
 						<span>balance:</span> {balance}
 					</p>
 				</div>
+				<MyButton
+					className="btnUserDetails"
+					onClick={() => modalWindow(person)}
+				>
+					Details...
+				</MyButton>
 			</div>
 		</div>
 	);

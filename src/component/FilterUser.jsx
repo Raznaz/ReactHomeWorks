@@ -1,9 +1,10 @@
 import React from 'react';
+import MyInput from './UI/Input/MyInput';
 
 function FilterUser(props) {
 	return (
 		<div>
-			<input type="search" placeholder="SEARCH...." {...props} />
+			<MyInput type="search" placeholder="Search...." {...props} />
 		</div>
 	);
 }
