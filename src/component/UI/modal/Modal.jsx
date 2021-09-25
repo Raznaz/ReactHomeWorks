@@ -3,11 +3,9 @@ import classes from './Modal.module.css';
 
 function Modal({ userName, modalState, setModalState }) {
 	const containerClass = [classes.modal];
-	console.log(containerClass);
 
 	if (modalState) {
 		containerClass.push(classes.show);
-		console.log(containerClass);
 	}
 
 	return (
@@ -28,14 +26,50 @@ function Modal({ userName, modalState, setModalState }) {
 							&times;
 						</div>
 						<div>
-							<h2>Детальная информация про:</h2>
-							<p>{userName.name}</p>
+							<h4>Information about:</h4>
+							<h2 className="card__name-title">{userName.name}</h2>
 							<div>
 								<img src={userName.picture} alt="" />
 							</div>
-							<p>age: {userName.age}</p>
-							<p>phone: {userName.phone}</p>
-							<p>about: {userName.about}</p>
+							<div className="card__content">
+								<p>
+									<span className="card__name-title">age:</span>{' '}
+									{userName.age}
+								</p>
+								<p>
+									<span className="card__name-title">phone:</span>:{' '}
+									{userName.phone}
+								</p>
+
+								<p>
+									<span className="card__name-title">eyeColor:</span>{' '}
+									{userName.eyeColor}
+								</p>
+								<p>
+									<span className="card__name-title">company:</span>{' '}
+									{userName.company}
+								</p>
+								<p>
+									<span className="card__name-title">gender:</span>{' '}
+									{userName.gender}
+								</p>
+								<p>
+									<span className="card__name-title">email:</span>{' '}
+									{userName.email}
+								</p>
+								<p>
+									<span className="card__name-title">address:</span>{' '}
+									{userName.address}
+								</p>
+								<p>
+									<span className="card__name-title">balance:</span>{' '}
+									{userName.balance}
+								</p>
+								<p>
+									<span className="card__name-title">about:</span>{' '}
+									{userName.about}
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -8,5 +8,18 @@
 
 .container {
 	max-width: 800px;
-	margin: 0;
+	margin: 0 auto;
+}
+
+.settingsContainer {
+	display: flex;
+	align-items: top;
+}
+
+.addUserBlock {
+	flex-basis: 50%;
+}
+
+.filterUserBlock {
+	flex-basis: 50%;
 }

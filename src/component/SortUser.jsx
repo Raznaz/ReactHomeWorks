@@ -7,7 +7,7 @@ function SortUser({ value, options, onSortChange, valueDefault }) {
 				value={value}
 				onChange={(e) => onSortChange(e.target.value)}
 			>
-				<option value={value} disabled>
+				<option value="" disabled>
 					{valueDefault}
 				</option>
 				{options.map((option) => (

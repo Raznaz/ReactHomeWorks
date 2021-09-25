@@ -4,7 +4,12 @@ import MyInput from './UI/Input/MyInput';
 function FilterUser(props) {
 	return (
 		<div>
-			<MyInput type="search" placeholder="Search...." {...props} />
+			<MyInput
+				className="btn__search"
+				type="search"
+				placeholder="Search...."
+				{...props}
+			/>
 		</div>
 	);
 }

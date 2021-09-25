@@ -22,3 +22,12 @@
 .card__content {
 	text-align: left;
 }
+
+.card__content p {
+	margin-bottom: 5px;
+}
+
+.card__name-title {
+	font-weight: 700;
+	background-color: #eee;
+}
