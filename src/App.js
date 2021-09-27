@@ -3,10 +3,9 @@ import { userData } from './userData';
 import AddCard from './component/AddCard';
 import CardList from './component/CardList';
 import FilterUser from './component/FilterUser';
-// import SortUser from './component/SortUser';
+import SortUser from './component/SortUser';
 import Modal from './component/UI/modal/Modal';
 import MyButton from './component/UI/Button/MyButton';
-import MySelect from './component/UI/Select/MySelect';
 import './App.css';
 
 function App() {
@@ -66,17 +65,7 @@ function App() {
 							value={userFilter}
 						/>
 
-						{/* <SortUser value={userSort} onSortChange={sortCards} /> */}
-
-						<MySelect
-							defaultValue="Sort by age"
-							value={userSort}
-							onSortChange={sortCards}
-							options={[
-								{ value: 'minToMax', title: 'Min to Max' },
-								{ value: 'maxToMin', title: 'Max to Min' },
-							]}
-						/>
+						<SortUser value={userSort} onSortChange={sortCards} />
 
 						<MyButton className="btn__reset" onClick={resetFilters}>
 							RESET
