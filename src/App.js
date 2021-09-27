@@ -3,23 +3,25 @@ import { userData } from './userData';
 import AddCard from './component/AddCard';
 import CardList from './component/CardList';
 import FilterUser from './component/FilterUser';
-import SortUser from './component/SortUser';
+// import SortUser from './component/SortUser';
 import Modal from './component/UI/modal/Modal';
 import MyButton from './component/UI/Button/MyButton';
+import MySelect from './component/UI/Select/MySelect';
 import './App.css';
 
 function App() {
 	const [userList, setUserList] = useState(userData);
-	const [userFilter, setUserFilter] = useState('');
-	const [userSort, setUserSort] = useState('');
 	const [userInfo, setUserInfo] = useState('');
 	const [isModal, setIsModal] = useState(false);
+
+	const [userFilter, setUserFilter] = useState('');
+	const [userSort, setUserSort] = useState('');
 
 	const addNewCard = (card) => {
 		setUserList([...userList, card]);
 	};
 
-	const userListFiltered = useMemo(
+	const userListFilteredAndSorted = useMemo(
 		() =>
 			userList.filter((obj) =>
 				obj.name.toLowerCase().includes(userFilter.toLowerCase()),
@@ -30,10 +32,8 @@ function App() {
 	const sortCards = (sortMethod) => {
 		setUserSort(sortMethod);
 		if (sortMethod === 'minToMax') {
-			console.log('minToMax');
 			setUserList([...userList].sort((a, b) => a.age - b.age));
 		} else {
-			console.log('maxToMin');
 			setUserList([...userList].sort((a, b) => b.age - a.age));
 		}
 	};
@@ -66,14 +66,16 @@ function App() {
 							value={userFilter}
 						/>
 
-						<SortUser
-							valueDefault="Sort by age"
+						{/* <SortUser value={userSort} onSortChange={sortCards} /> */}
+
+						<MySelect
+							defaultValue="Sort by age"
+							value={userSort}
+							onSortChange={sortCards}
 							options={[
 								{ value: 'minToMax', title: 'Min to Max' },
 								{ value: 'maxToMin', title: 'Max to Min' },
 							]}
-							value={userSort}
-							onSortChange={sortCards}
 						/>
 
 						<MyButton className="btn__reset" onClick={resetFilters}>
@@ -82,14 +84,11 @@ function App() {
 					</div>
 				</div>
 				<hr />
-				{userListFiltered.length ? (
-					<CardList
-						userList={userListFiltered}
-						modalWindow={modalWindow}
-					/>
-				) : (
-					<h1>NOT FOUND</h1>
-				)}
+				<CardList
+					userList={userListFilteredAndSorted}
+					modalWindow={modalWindow}
+				/>
+
 				<hr />
 				<Modal
 					userName={userInfo}

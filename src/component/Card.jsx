@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import './Card.css';
+import React from 'react';
 import MyButton from './UI/Button/MyButton';
-// import Modal from './Modal';
+import './Card.css';
 
 function Card({ person, modalWindow }) {
-	const [showDetail, setShowDetail] = useState(false);
 	const { name, age, gender, balance, picture } = person;
 
 	return (

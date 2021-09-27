@@ -1,9 +1,20 @@
 import React from 'react';
+import MySelect from './UI/Select/MySelect';
 
-function SortUser({ value, options, onSortChange, valueDefault }) {
+function SortUser({ value, onSortChange }) {
 	return (
 		<div>
-			<select
+			<MySelect
+				valueDefault="Sort by age"
+				value={value}
+				onChange={(e) => onSortChange(e.target.value)}
+				options={[
+					{ value: 'minToMax', title: 'Min to Max' },
+					{ value: 'maxToMin', title: 'Max to Min' },
+				]}
+			/>
+
+			{/* <select
 				value={value}
 				onChange={(e) => onSortChange(e.target.value)}
 			>
@@ -15,7 +26,7 @@ function SortUser({ value, options, onSortChange, valueDefault }) {
 						{option.title}
 					</option>
 				))}
-			</select>
+			</select> */}
 		</div>
 	);
 }

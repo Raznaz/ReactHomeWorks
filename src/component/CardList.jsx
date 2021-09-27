@@ -3,6 +3,10 @@ import Card from './Card';
 import './CardList.css';
 
 function CardList({ userList, modalWindow }) {
+	if (!userList.length) {
+		return <h1>NOT FOUND USERS</h1>;
+	}
+
 	return (
 		<div className="card-container">
 			{userList.map((person) => (
