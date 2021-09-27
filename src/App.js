@@ -12,7 +12,6 @@ function App() {
 	const [userList, setUserList] = useState(userData);
 	const [userInfo, setUserInfo] = useState('');
 	const [isModal, setIsModal] = useState(false);
-
 	const [userFilter, setUserFilter] = useState('');
 	const [userSort, setUserSort] = useState('');
 
@@ -54,10 +53,12 @@ function App() {
 				<div className="settingsContainer">
 					<div className="addUserBlock">
 						<h2>Add new user</h2>
+
 						<AddCard addNewCard={addNewCard} />
 					</div>
 					<div className="filterUserBlock">
 						<h2>Filter&Sort</h2>
+
 						<FilterUser
 							onChange={(e) => {
 								setUserFilter(e.target.value);
@@ -73,12 +74,13 @@ function App() {
 					</div>
 				</div>
 				<hr />
+
 				<CardList
 					userList={userListFilteredAndSorted}
 					modalWindow={modalWindow}
 				/>
-
 				<hr />
+
 				<Modal
 					userName={userInfo}
 					modalState={isModal}
