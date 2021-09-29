@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from './UI/button/Button';
+import './UI/button/Button.css';
 
 let timerId = null;
 
@@ -95,27 +97,39 @@ function Timer() {
 			</h5>
 			<hr />
 			{!isTimerWork ? (
-				<button
+				<Button
 					onClick={() => handleTimerStart()}
 					disabled={!isBlockBtn ? false : true}
+					className="btn green"
 				>
 					Start
-				</button>
+				</Button>
 			) : (
-				<button onClick={() => handleTimerStart()}>Continue</button>
+				<Button
+					onClick={() => handleTimerStart()}
+					className="btn purple"
+				>
+					Continue
+				</Button>
 			)}
 
-			<button
+			<Button
 				onClick={() => handleTimerStop()}
 				disabled={!isBlockBtn || isTimerWork}
+				className="btn red"
 			>
 				Stop
-			</button>
-			<button onClick={() => handleTimerReset()}>Reset</button>
+			</Button>
+			<Button
+				onClick={() => handleTimerReset()}
+				className="btn orange"
+			>
+				Reset
+			</Button>
 			<hr />
 			<div>
 				{result.map((obj, i) => (
-					<p key={obj.ms + i}>
+					<p key={obj.ms + obj.sec + i}>
 						{obj.hr}:{obj.min}:{obj.sec}:{obj.ms}
 					</p>
 				))}
