@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TimerResultsList from './TimerResultsList';
 import Button from './UI/button/Button';
 import './UI/button/Button.css';
+import { handleTimeCalibration } from './TimeCalibration';
 
 let timerId = null;
 
@@ -53,35 +54,33 @@ function Timer() {
 
 	const tick = (startMoment) => {
 		timerId = setInterval(() => {
-			// TODO: сократить код немного
-			let dif = Date.now() - startMoment;
-			setTime(dif);
+			setTime(Date.now() - startMoment);
 		}, 0);
 	};
 
-	const handleTimeCalibration = (time) => {
-		let ms = time % 1000;
-		let sec = Math.trunc((time / 1000) % 60);
-		let min = Math.trunc((time / 1000 / 60) % 60);
-		let hr = Math.trunc(time / 1000 / 60 / 60);
-		if (sec < 10) {
-			sec = '0' + sec;
-		}
-		if (min < 10) {
-			min = '0' + min;
-		}
-		if (hr < 10) {
-			hr = '0' + hr;
-		}
-		const currentTimerObj = {
-			hr,
-			min,
-			sec,
-			ms,
-		};
+	// const handleTimeCalibration = (time) => {
+	// 	let ms = time % 1000;
+	// 	let sec = Math.trunc((time / 1000) % 60);
+	// 	let min = Math.trunc((time / 1000 / 60) % 60);
+	// 	let hr = Math.trunc(time / 1000 / 60 / 60);
+	// 	if (sec < 10) {
+	// 		sec = '0' + sec;
+	// 	}
+	// 	if (min < 10) {
+	// 		min = '0' + min;
+	// 	}
+	// 	if (hr < 10) {
+	// 		hr = '0' + hr;
+	// 	}
+	// 	const currentTimerObj = {
+	// 		hr,
+	// 		min,
+	// 		sec,
+	// 		ms,
+	// 	};
 
-		return currentTimerObj;
-	};
+	// 	return currentTimerObj;
+	// };
 
 	const formatedTime = handleTimeCalibration(time);
 
