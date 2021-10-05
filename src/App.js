@@ -6,6 +6,7 @@ function App() {
 	return (
 		<div className="container">
 			<h3>Timer HW_2</h3>
+			<hr />
 			<Timer />
 		</div>
 	);

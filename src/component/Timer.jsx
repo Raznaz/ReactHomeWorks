@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TimerResultsList from './TimerResultsList';
 import Button from './UI/button/Button';
 import './UI/button/Button.css';
 
@@ -8,7 +9,6 @@ function Timer() {
 	const [isTimerWork, setIsTimerWork] = useState(false);
 	const [time, setTime] = useState(0);
 	const [isBlockBtn, setIsBlockBtn] = useState(false);
-
 	const [result, setResult] = useState([]);
 
 	useEffect(() => {
@@ -34,12 +34,7 @@ function Timer() {
 			setIsBlockBtn(!isBlockBtn);
 		}
 	};
-	// const handleTimerContinue = () => {
-	// 	console.log('Continue');
-	// 	const begin = Date.now() - time;
-	// 	setIsTimerWork(false);
-	// 	tick(begin);
-	// };
+
 	const handleTimerStop = () => {
 		console.log('Stop');
 		setIsTimerWork(true);
@@ -58,6 +53,7 @@ function Timer() {
 
 	const tick = (startMoment) => {
 		timerId = setInterval(() => {
+			// TODO: сократить код немного
 			let dif = Date.now() - startMoment;
 			setTime(dif);
 		}, 0);
@@ -127,13 +123,7 @@ function Timer() {
 				Reset
 			</Button>
 			<hr />
-			<div>
-				{result.map((obj, i) => (
-					<p key={obj.ms + obj.sec + i}>
-						{obj.hr}:{obj.min}:{obj.sec}:{obj.ms}
-					</p>
-				))}
-			</div>
+			<TimerResultsList result={result} />
 		</div>
 	);
 }
