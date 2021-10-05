@@ -13,9 +13,7 @@ function Timer() {
 	const [result, setResult] = useState([]);
 
 	useEffect(() => {
-		console.log('start component');
 		const timesFromLS = JSON.parse(localStorage.getItem('times'));
-		console.log(timesFromLS);
 		timesFromLS && setResult([...result, ...timesFromLS]);
 	}, []);
 
@@ -24,7 +22,6 @@ function Timer() {
 	}, [result]);
 
 	const handleTimerStart = () => {
-		console.log('start');
 		const begin = isTimerWork ? Date.now() - time : Date.now();
 		tick(begin);
 		if (isTimerWork) {
@@ -35,14 +32,12 @@ function Timer() {
 	};
 
 	const handleTimerStop = () => {
-		console.log('Stop');
 		setIsTimerWork(true);
 		clearInterval(timerId);
 		setResult([...result, formatedTime]);
 	};
 
 	const handleTimerReset = () => {
-		console.log('Reset');
 		setIsTimerWork(false);
 		setIsBlockBtn(false);
 		clearInterval(timerId);
@@ -92,6 +87,7 @@ function Timer() {
 			<Button
 				onClick={() => handleTimerReset()}
 				className="btn orange"
+				disabled={!isTimerWork && !isBlockBtn}
 			>
 				Reset
 			</Button>
