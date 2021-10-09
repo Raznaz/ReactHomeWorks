@@ -2,5 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { RegState } from './Context/RegState';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<RegState>
+		<App />
+	</RegState>,
+	document.getElementById('root'),
+);
