@@ -1,28 +1,29 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useRegContext } from '../Context/RegState';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-let mySrc = '';
+const schema = yup.object({
+	myPicture: yup.mixed().required('File is required'),
+});
 
 function Step3() {
-	const { setValues, nextStep, getPicture } = useRegContext();
+	const { prevStep, nextStep, getPicture } = useRegContext();
 
-	const { register, handleSubmit } = useForm();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm({
+		mode: 'onChange',
+		resolver: yupResolver(schema),
+	});
 
 	const onSubmit = (data) => {
 		console.log(data.myPicture[0]);
-		// setValues(data);
 		getPicture(data);
-
 		nextStep();
-		// let file = data.myPicture[0];
-		// console.log(file);
-		// let reader = new FileReader();
-		// console.log(reader);
-		// reader.readAsDataURL(file);
-		// mySrc = reader.result;
-		// console.log(reader);
-		// console.log(reader.result);
 	};
 
 	return (
@@ -33,9 +34,11 @@ function Step3() {
 					type="file"
 					name="myPicture"
 				/>
-				<button type="submit">Submit</button>
+				<button type="submit" onClick={prevStep}>
+					Previous
+				</button>
+				<button type="submit">Next</button>
 			</form>
-			<img src={mySrc} alt="" />
 		</div>
 	);
 }
