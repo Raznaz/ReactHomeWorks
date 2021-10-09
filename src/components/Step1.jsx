@@ -3,6 +3,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRegContext } from '../Context/RegState';
+import MainContainer from './MainContainer';
+import { Typography } from '@mui/material';
+import Form from './Form';
+import { Input } from './Input';
 
 const schema = yup.object({
 	firstName: yup.string().required(),
@@ -34,10 +38,12 @@ function Step1() {
 	};
 
 	return (
-		<div className="container">
-			<h2>Step 1!</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input
+		<MainContainer>
+			<Typography component="h2" variant="h4">
+				Step 1
+			</Typography>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Input
 					{...register('firstName')}
 					type="text"
 					id="firstName"
@@ -46,7 +52,7 @@ function Step1() {
 					placeholder="name"
 				/>
 				<p>{errors.firstName?.message}</p>
-				<input
+				<Input
 					{...register('lastName')}
 					type="text"
 					id="lastName"
@@ -55,7 +61,7 @@ function Step1() {
 					placeholder="last name"
 				/>
 				<p>{errors.lastName?.message}</p>
-				<input
+				<Input
 					{...register('email')}
 					type="email"
 					id="email"
@@ -66,8 +72,8 @@ function Step1() {
 				/>
 				<p>{errors.email?.message}</p>
 				<button type="submit">Next</button>
-			</form>
-		</div>
+			</Form>
+		</MainContainer>
 	);
 }
 
