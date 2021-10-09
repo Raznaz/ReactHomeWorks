@@ -8,20 +8,6 @@ import { useRegContext } from './Context/RegState';
 
 function App() {
 	const { state } = useRegContext();
-	// console.log(state.step);
-
-	// if (state.step === 1) {
-	// 	return <Step1 />;
-	// }
-	// if (state.step === 2) {
-	// 	return <Step2 />;
-	// }
-	// if (state.step === 3) {
-	// 	return <Step3 />;
-	// }
-	// if (state.step === 4) {
-	// 	return <Step4 />;
-	// }
 
 	return (
 		<>
