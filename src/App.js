@@ -10,23 +10,27 @@ function App() {
 	const { state } = useRegContext();
 	// console.log(state.step);
 
-	if (state.step === 1) {
-		return <Step1 />;
-	}
-	if (state.step === 2) {
-		return <Step2 />;
-	}
-	if (state.step === 3) {
-		return <Step3 />;
-	}
-	if (state.step === 4) {
-		return <Step4 />;
-	}
+	// if (state.step === 1) {
+	// 	return <Step1 />;
+	// }
+	// if (state.step === 2) {
+	// 	return <Step2 />;
+	// }
+	// if (state.step === 3) {
+	// 	return <Step3 />;
+	// }
+	// if (state.step === 4) {
+	// 	return <Step4 />;
+	// }
 
 	return (
 		<>
 			<Header />
-			<Result />
+			{state.step === 1 ? <Step1 /> : null}
+			{state.step === 2 ? <Step2 /> : null}
+			{state.step === 3 ? <Step3 /> : null}
+			{state.step === 4 ? <Step4 /> : null}
+			{state.step === 5 ? <Result /> : null}
 		</>
 	);
 }

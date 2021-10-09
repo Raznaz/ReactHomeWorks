@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header() {
-	return <div>Registartion</div>;
+	return <div style={{ backgroundColor: 'coral' }}>HEADER</div>;
 }
 
 export default Header;
