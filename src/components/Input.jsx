@@ -8,6 +8,7 @@ export const Input = forwardRef((props, ref) => {
 			margin="normal"
 			inputRef={ref}
 			fullWidth
+			sx={{ backgroundColor: 'white' }}
 			{...props}
 		></TextField>
 	);
