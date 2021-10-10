@@ -3,6 +3,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRegContext } from '../Context/RegState';
+import MainContainer from './MainContainer';
+import { Typography } from '@mui/material';
+import Form from './Form';
+import { Input } from './Input';
+import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './SecondaryButton';
 
 const schema = yup.object({
 	city: yup.string().required(),
@@ -34,10 +40,12 @@ function Step2() {
 	};
 
 	return (
-		<div className="container">
-			<h2>Step 2</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input
+		<MainContainer>
+			<Typography component="h2" variant="h4">
+				Step 2
+			</Typography>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Input
 					{...register('city')}
 					type="text"
 					id="city"
@@ -45,8 +53,14 @@ function Step2() {
 					name="city"
 					placeholder="city"
 				/>
-				<p>{errors.city?.message}</p>
-				<input
+				<Typography
+					component="div"
+					variant="body1"
+					sx={{ color: 'red', fontSize: '10px' }}
+				>
+					{errors.city?.message}
+				</Typography>
+				<Input
 					{...register('street')}
 					type="text"
 					id="street"
@@ -54,8 +68,14 @@ function Step2() {
 					name="street"
 					placeholder="street"
 				/>
-				<p>{errors.street?.message}</p>
-				<input
+				<Typography
+					component="div"
+					variant="body1"
+					sx={{ color: 'red', fontSize: '10px' }}
+				>
+					{errors.street?.message}
+				</Typography>
+				<Input
 					{...register('house')}
 					type="house"
 					id="house"
@@ -64,10 +84,10 @@ function Step2() {
 					placeholder="house"
 				/>
 				<p>{errors.email?.message}</p>
-				<button onClick={prevStep}>Previous</button>
-				<button type="submit">Next</button>
-			</form>
-		</div>
+				<SecondaryButton onClick={prevStep}>Previous</SecondaryButton>
+				<PrimaryButton>Next</PrimaryButton>
+			</Form>
+		</MainContainer>
 	);
 }
 

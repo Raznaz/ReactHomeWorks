@@ -54,7 +54,7 @@ function Step1() {
 				/>
 				<Typography
 					variant="body1"
-					component="span"
+					component="div"
 					sx={{ color: 'red', fontSize: '10px' }}
 				>
 					{errors.firstName?.message}
@@ -69,7 +69,7 @@ function Step1() {
 				/>
 				<Typography
 					variant="body1"
-					component="span"
+					component="div"
 					sx={{ color: 'red', fontSize: '10px' }}
 				>
 					{errors.lastName?.message}
