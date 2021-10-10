@@ -11,8 +11,14 @@ import PrimaryButton from './PrimaryButton';
 import ErrorMessage from './ErrorMessage';
 
 const schema = yup.object({
-	firstName: yup.string().required(),
-	lastName: yup.string().required(),
+	firstName: yup
+		.string()
+		.matches(/^([^0-9]*)$/, 'First name should not contain numbers')
+		.required(),
+	lastName: yup
+		.string()
+		.matches(/^([^0-9]*)$/, 'Last name should not contain numbers')
+		.required(),
 	email: yup.string().email().required(),
 });
 
@@ -51,7 +57,6 @@ function Step1() {
 					id="firstName"
 					label="First Name"
 					name="firstName"
-					placeholder="name"
 				/>
 				<ErrorMessage>{errors.firstName?.message}</ErrorMessage>
 				<Input
@@ -60,7 +65,6 @@ function Step1() {
 					id="lastName"
 					label="Last Name"
 					name="lastName"
-					placeholder="last name"
 				/>
 				<ErrorMessage>{errors.lastName?.message}</ErrorMessage>
 				<Input
@@ -69,7 +73,6 @@ function Step1() {
 					id="email"
 					label="Email"
 					name="email"
-					placeholder="email"
 					required
 				/>
 				<ErrorMessage>{errors.email?.message}</ErrorMessage>
