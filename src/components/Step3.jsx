@@ -26,7 +26,7 @@ function Step3() {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data.myPicture[0]);
+		// console.log(data.myPicture[0]);
 		getPicture(data);
 		nextStep();
 	};

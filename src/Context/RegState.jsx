@@ -17,7 +17,7 @@ export const RegState = ({ children }) => {
 
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	// методы
+	// Methods
 
 	const setValues = (values) => {
 		console.log(values);

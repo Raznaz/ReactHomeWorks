@@ -12,7 +12,7 @@ import SecondaryButton from './SecondaryButton';
 import PrimaryButton from './PrimaryButton';
 
 const schema = yup.object({
-	password: yup.string().required('Password is required'),
+	password: yup.string().min(3).required('Password is required'),
 	passwordConfirmation: yup
 		.string()
 		.oneOf([yup.ref('password'), null], 'Passwords must match'),

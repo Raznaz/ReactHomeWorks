@@ -14,7 +14,7 @@ import ErrorMessage from './ErrorMessage';
 const schema = yup.object({
 	city: yup.string().required(),
 	street: yup.string().required(),
-	house: yup.number().required(),
+	house: yup.string().required(),
 });
 
 function Step2() {
@@ -72,7 +72,7 @@ function Step2() {
 					name="house"
 					placeholder="house"
 				/>
-				<ErrorMessage>{errors.email?.message}</ErrorMessage>
+				<ErrorMessage>{errors.house?.message}</ErrorMessage>
 				<SecondaryButton onClick={prevStep}>Previous</SecondaryButton>
 				<PrimaryButton>Next</PrimaryButton>
 			</Form>
