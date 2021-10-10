@@ -8,6 +8,8 @@ import Form from './Form';
 import { Input } from './Input';
 import MainContainer from './MainContainer';
 import ErrorMessage from './ErrorMessage';
+import SecondaryButton from './SecondaryButton';
+import PrimaryButton from './PrimaryButton';
 
 const schema = yup.object({
 	password: yup.string().required('Password is required'),
@@ -36,7 +38,7 @@ function Step4() {
 	return (
 		<MainContainer>
 			<Typography component="h2" variant="h4">
-				Step 1
+				Step 4
 			</Typography>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<Input
@@ -48,7 +50,7 @@ function Step4() {
 					placeholder="password"
 				/>
 				<ErrorMessage>{errors.password?.message}</ErrorMessage>
-				<input
+				<Input
 					{...register('passwordConfirmation')}
 					type="password"
 					id="passwordConfirmation"
@@ -56,12 +58,12 @@ function Step4() {
 					name="passwordConfirmation"
 					placeholder="repeat password"
 				/>
-				<p>{errors.passwordConfirmation?.message}</p>
+				<ErrorMessage>
+					{errors.passwordConfirmation?.message}
+				</ErrorMessage>
 
-				<button type="submit" onClick={prevStep}>
-					Previous
-				</button>
-				<button type="submit">Submit</button>
+				<SecondaryButton onClick={prevStep}>Previous</SecondaryButton>
+				<PrimaryButton type="submit">Submit</PrimaryButton>
 			</Form>
 		</MainContainer>
 	);

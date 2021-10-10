@@ -1,22 +1,18 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 import { useRegContext } from '../Context/RegState';
+import MainContainer from './MainContainer';
 
 function Result() {
 	const { state } = useRegContext();
-	console.log(state.data);
-	console.log(state.img.result);
-	const {
-		firstName,
-		lastName,
-		email,
-		city,
-		street,
-		house,
-		myPicture,
-	} = state.data;
+
+	const { firstName, lastName, email, city, street, house } =
+		state.data;
 	return (
-		<div>
-			<h2>Спасибо за регистрацию</h2>
+		<MainContainer>
+			<Typography variant="h4" color="blueviolet">
+				Спасибо за регистрацию
+			</Typography>
 			<div>
 				<div className="lmgContainer">
 					<img src={state.img.result} alt="noPhoto" />
@@ -49,7 +45,7 @@ function Result() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</MainContainer>
 	);
 }
 
