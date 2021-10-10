@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/layout/Header';
 import Result from './components/Result';
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';

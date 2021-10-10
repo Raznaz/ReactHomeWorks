@@ -5,9 +5,9 @@ import * as yup from 'yup';
 import { useRegContext } from '../Context/RegState';
 import MainContainer from './MainContainer';
 import { Typography } from '@mui/material';
-import Form from './Form';
-import { Input } from './Input';
-import PrimaryButton from './PrimaryButton';
+import Form from './UI/Form';
+import { Input } from './UI/Input';
+import PrimaryButton from './UI/PrimaryButton';
 import ErrorMessage from './ErrorMessage';
 
 const schema = yup.object({

@@ -4,10 +4,10 @@ import { useRegContext } from '../Context/RegState';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import MainContainer from './MainContainer';
-import Form from './Form';
+import Form from './UI/Form';
 import { Input, Typography } from '@mui/material';
-import SecondaryButton from './SecondaryButton';
-import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './UI/SecondaryButton';
+import PrimaryButton from './UI/PrimaryButton';
 
 const schema = yup.object({
 	myPicture: yup.mixed().required('File is required'),

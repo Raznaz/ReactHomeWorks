@@ -8,7 +8,7 @@ import {
 import LoginIcon from '@mui/icons-material/Login';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
 import FlakyIcon from '@mui/icons-material/Flaky';
-import SwitchButton from './SwitchButton';
+import SwitchButton from '../UI/SwitchButton';
 
 function Header() {
 	return (
