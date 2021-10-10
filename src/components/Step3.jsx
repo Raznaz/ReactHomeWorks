@@ -4,6 +4,10 @@ import { useRegContext } from '../Context/RegState';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import MainContainer from './MainContainer';
+import Form from './Form';
+import { Input, Typography } from '@mui/material';
+import SecondaryButton from './SecondaryButton';
+import PrimaryButton from './PrimaryButton';
 
 const schema = yup.object({
 	myPicture: yup.mixed().required('File is required'),
@@ -29,17 +33,19 @@ function Step3() {
 
 	return (
 		<MainContainer>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input
+			<Typography component="h2" variant="h4">
+				Step 3
+			</Typography>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Input
 					{...register('myPicture')}
 					type="file"
 					name="myPicture"
+					sx={{ display: 'block' }}
 				/>
-				<button type="submit" onClick={prevStep}>
-					Previous
-				</button>
-				<button type="submit">Next</button>
-			</form>
+				<SecondaryButton onClick={prevStep}>Previous</SecondaryButton>
+				<PrimaryButton type="submit">Next</PrimaryButton>
+			</Form>
 		</MainContainer>
 	);
 }

@@ -9,6 +9,7 @@ import Form from './Form';
 import { Input } from './Input';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
+import ErrorMessage from './ErrorMessage';
 
 const schema = yup.object({
 	city: yup.string().required(),
@@ -53,13 +54,7 @@ function Step2() {
 					name="city"
 					placeholder="city"
 				/>
-				<Typography
-					component="div"
-					variant="body1"
-					sx={{ color: 'red', fontSize: '10px' }}
-				>
-					{errors.city?.message}
-				</Typography>
+				<ErrorMessage>{errors.city?.message}</ErrorMessage>
 				<Input
 					{...register('street')}
 					type="text"
@@ -68,13 +63,7 @@ function Step2() {
 					name="street"
 					placeholder="street"
 				/>
-				<Typography
-					component="div"
-					variant="body1"
-					sx={{ color: 'red', fontSize: '10px' }}
-				>
-					{errors.street?.message}
-				</Typography>
+				<ErrorMessage>{errors.street?.message}</ErrorMessage>
 				<Input
 					{...register('house')}
 					type="house"
@@ -83,7 +72,7 @@ function Step2() {
 					name="house"
 					placeholder="house"
 				/>
-				<p>{errors.email?.message}</p>
+				<ErrorMessage>{errors.email?.message}</ErrorMessage>
 				<SecondaryButton onClick={prevStep}>Previous</SecondaryButton>
 				<PrimaryButton>Next</PrimaryButton>
 			</Form>

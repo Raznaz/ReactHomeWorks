@@ -8,6 +8,7 @@ import { Typography } from '@mui/material';
 import Form from './Form';
 import { Input } from './Input';
 import PrimaryButton from './PrimaryButton';
+import ErrorMessage from './ErrorMessage';
 
 const schema = yup.object({
 	firstName: yup.string().required(),
@@ -52,13 +53,7 @@ function Step1() {
 					name="firstName"
 					placeholder="name"
 				/>
-				<Typography
-					variant="body1"
-					component="div"
-					sx={{ color: 'red', fontSize: '10px' }}
-				>
-					{errors.firstName?.message}
-				</Typography>
+				<ErrorMessage>{errors.firstName?.message}</ErrorMessage>
 				<Input
 					{...register('lastName')}
 					type="text"
@@ -67,13 +62,7 @@ function Step1() {
 					name="lastName"
 					placeholder="last name"
 				/>
-				<Typography
-					variant="body1"
-					component="div"
-					sx={{ color: 'red', fontSize: '10px' }}
-				>
-					{errors.lastName?.message}
-				</Typography>
+				<ErrorMessage>{errors.lastName?.message}</ErrorMessage>
 				<Input
 					{...register('email')}
 					type="email"
@@ -83,13 +72,7 @@ function Step1() {
 					placeholder="email"
 					required
 				/>
-				<Typography
-					variant="body1"
-					component="div"
-					sx={{ color: 'red', fontSize: '10px' }}
-				>
-					{errors.email?.message}
-				</Typography>
+				<ErrorMessage>{errors.email?.message}</ErrorMessage>
 				<PrimaryButton>Next</PrimaryButton>
 			</Form>
 		</MainContainer>

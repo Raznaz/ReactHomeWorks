@@ -3,6 +3,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRegContext } from '../Context/RegState';
+import { Typography } from '@mui/material';
+import Form from './Form';
+import { Input } from './Input';
+import MainContainer from './MainContainer';
+import ErrorMessage from './ErrorMessage';
 
 const schema = yup.object({
 	password: yup.string().required('Password is required'),
@@ -11,7 +16,7 @@ const schema = yup.object({
 		.oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
 
-function Step3() {
+function Step4() {
 	const { prevStep, nextStep, setValues, state } = useRegContext();
 
 	const {
@@ -29,10 +34,12 @@ function Step3() {
 	};
 
 	return (
-		<div className="container">
-			<h2>Step 3</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input
+		<MainContainer>
+			<Typography component="h2" variant="h4">
+				Step 1
+			</Typography>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Input
 					{...register('password')}
 					type="password"
 					id="password"
@@ -40,7 +47,7 @@ function Step3() {
 					name="password"
 					placeholder="password"
 				/>
-				<p>{errors.password?.message}</p>
+				<ErrorMessage>{errors.password?.message}</ErrorMessage>
 				<input
 					{...register('passwordConfirmation')}
 					type="password"
@@ -55,9 +62,9 @@ function Step3() {
 					Previous
 				</button>
 				<button type="submit">Submit</button>
-			</form>
-		</div>
+			</Form>
+		</MainContainer>
 	);
 }
 
-export default Step3;
+export default Step4;
