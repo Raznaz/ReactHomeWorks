@@ -6,6 +6,9 @@ import {
 	Typography,
 } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import FlakyIcon from '@mui/icons-material/Flaky';
+import SwitchButton from './SwitchButton';
 
 function Header() {
 	return (
@@ -19,7 +22,8 @@ function Header() {
 					REGISTRATION FORM
 				</Typography>
 				<IconButton color="inherit">
-					<LoginIcon />
+					<FlakyIcon />
+					<SwitchButton />
 				</IconButton>
 			</Toolbar>
 		</AppBar>

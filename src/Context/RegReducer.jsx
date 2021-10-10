@@ -3,15 +3,17 @@ import {
 	NEXT_STEP,
 	PREVIOUS_STEP,
 	GET_PICTURE,
+	CHANGE_COLOR_THEME,
 } from './RegAction';
 
 export const reducer = (state, action) => {
-	console.log(action.payload);
 	switch (action.type) {
+		case CHANGE_COLOR_THEME:
+			console.log('reducer work');
+			return { ...state, isTurnBlackTheme: !state.isTurnBlackTheme };
 		case GET_PICTURE: {
 			console.log(action.payload.myPicture);
 			if (action.payload.myPicture.length === 0) {
-				console.log('NO FILE');
 				return {
 					...state,
 					img: {

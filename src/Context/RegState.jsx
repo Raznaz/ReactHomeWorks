@@ -6,6 +6,7 @@ import {
 	NEXT_STEP,
 	PREVIOUS_STEP,
 	GET_PICTURE,
+	CHANGE_COLOR_THEME,
 } from './RegAction';
 
 export const RegState = ({ children }) => {
@@ -13,6 +14,7 @@ export const RegState = ({ children }) => {
 		data: {},
 		step: 1,
 		img: '',
+		isTurnBlackTheme: false,
 	};
 
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -48,9 +50,23 @@ export const RegState = ({ children }) => {
 		});
 	};
 
+	const handleChangeColorTheme = (e) => {
+		// console.log('handleChangeColorTheme', e.target.checked);
+		dispatch({
+			type: CHANGE_COLOR_THEME,
+		});
+	};
+
 	// value
 
-	const value = { setValues, nextStep, prevStep, getPicture, state };
+	const value = {
+		setValues,
+		nextStep,
+		prevStep,
+		getPicture,
+		handleChangeColorTheme,
+		state,
+	};
 
 	return (
 		<RegContext.Provider value={value}>

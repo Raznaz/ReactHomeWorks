@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
+import { useRegContext } from '../Context/RegState';
 
 const useStyles = makeStyles({
 	root: {
@@ -13,8 +14,17 @@ const useStyles = makeStyles({
 	},
 });
 
+const blackStyle = makeStyles({
+	root: {
+		backgroundColor: 'black',
+	},
+});
+
 function MainContainer({ children, ...props }) {
+	const { state } = useRegContext();
+
 	const styles = useStyles();
+	const black = blackStyle();
 
 	return (
 		<Container
@@ -22,6 +32,7 @@ function MainContainer({ children, ...props }) {
 			container="main"
 			maxWidth="xs"
 			{...props}
+			sx={state.isTurnBlackTheme ? { backgroundColor: 'gray' } : null}
 		>
 			{children}
 		</Container>
