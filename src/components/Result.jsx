@@ -1,7 +1,8 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { useRegContext } from '../Context/RegState';
-import MainContainer from './MainContainer';
+import { useRegContext } from '../actions/RegState';
+
+import MainContainer from './layout/MainContainer';
 
 function Result() {
 	const { state } = useRegContext();

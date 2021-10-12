@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
-import { useRegContext } from '../Context/RegState';
+import { useRegContext } from '../../actions/RegState';
 
 const useStyles = makeStyles({
 	root: {

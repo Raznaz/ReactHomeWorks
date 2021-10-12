@@ -1,6 +1,6 @@
 import { Switch } from '@mui/material';
 import React from 'react';
-import { useRegContext } from '../../Context/RegState';
+import { useRegContext } from '../../actions/RegState';
 
 const label = { inputProps: { 'aria-label': 'controlled' } };
 

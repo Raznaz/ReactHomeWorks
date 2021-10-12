@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { RegState } from './Context/RegState';
+import { RegState } from '../src/actions/RegState';
 
 ReactDOM.render(
 	<RegState>

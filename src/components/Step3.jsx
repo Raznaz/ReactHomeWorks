@@ -1,9 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useRegContext } from '../Context/RegState';
+import { useRegContext } from '../actions/RegState';
+
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import MainContainer from './MainContainer';
+import MainContainer from './layout/MainContainer';
 import Form from './UI/Form';
 import { Input, Typography } from '@mui/material';
 import SecondaryButton from './UI/SecondaryButton';

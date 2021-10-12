@@ -4,7 +4,7 @@ import {
 	PREVIOUS_STEP,
 	GET_PICTURE,
 	CHANGE_COLOR_THEME,
-} from './RegAction';
+} from '../actions/RegAction';
 
 export const reducer = (state, action) => {
 	switch (action.type) {

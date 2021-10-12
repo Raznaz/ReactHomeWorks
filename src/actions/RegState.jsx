@@ -1,13 +1,13 @@
 import React, { useContext, useReducer } from 'react';
-import { RegContext } from './RegContext';
-import { reducer } from './RegReducer';
+import { RegContext } from '../Context/RegContext';
+import { reducer } from '../reducer/RegReducer';
 import {
 	SET_DATA,
 	NEXT_STEP,
 	PREVIOUS_STEP,
 	GET_PICTURE,
 	CHANGE_COLOR_THEME,
-} from './RegAction';
+} from '../actions/RegAction';
 
 export const RegState = ({ children }) => {
 	const initialState = {

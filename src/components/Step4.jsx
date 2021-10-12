@@ -2,11 +2,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useRegContext } from '../Context/RegState';
+import { useRegContext } from '../actions/RegState';
+
 import { Typography } from '@mui/material';
 import Form from './UI/Form';
 import { Input } from './UI/Input';
-import MainContainer from './MainContainer';
+import MainContainer from './layout/MainContainer';
 import ErrorMessage from './ErrorMessage';
 import SecondaryButton from './UI/SecondaryButton';
 import PrimaryButton from './UI/PrimaryButton';
