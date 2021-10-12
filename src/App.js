@@ -13,11 +13,11 @@ function App() {
 	return (
 		<>
 			<Header />
-			{state.step === 1 ? <Step1 /> : null}
-			{state.step === 2 ? <Step2 /> : null}
-			{state.step === 3 ? <Step3 /> : null}
-			{state.step === 4 ? <Step4 /> : null}
-			{state.step === 5 ? <Result /> : null}
+			{state.step === 1 && <Step1 />}
+			{state.step === 2 && <Step2 />}
+			{state.step === 3 && <Step3 />}
+			{state.step === 4 && <Step4 />}
+			{state.step === 5 && <Result />}
 		</>
 	);
 }
