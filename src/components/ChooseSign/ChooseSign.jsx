@@ -7,7 +7,6 @@ function ChooseSign() {
 	const [state, dispatch] = useGameStore();
 
 	const handleChange = (event) => {
-		// console.log(event.target.value);
 		dispatch(toggleSign(event.target.value));
 	};
 
@@ -22,6 +21,8 @@ function ChooseSign() {
 					value="X"
 					onChange={handleChange}
 					disabled={state.history.length >= 2}
+					// checked={state.toggleSign === 'X'}
+					checked={state.isXTurn}
 				/>
 				<label htmlFor="X"> - "X"</label>
 				<span>||</span>
@@ -32,6 +33,7 @@ function ChooseSign() {
 					value="O"
 					onChange={handleChange}
 					disabled={state.history.length >= 2}
+					checked={!state.isXTurn}
 				/>
 				<label htmlFor="O"> - "O"</label>
 			</form>
