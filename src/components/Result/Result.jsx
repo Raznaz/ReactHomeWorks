@@ -1,11 +1,8 @@
-// import React, { useEffect } from 'react';
-// import { putFromLocalStorage } from '../../actions';
 import { useGameStore } from '../../context/gameContext';
 import './Result.scss';
 
 function Result() {
 	const [state, dispatch] = useGameStore();
-	// console.log(state.winnersHistory[0].date);
 	return (
 		<div className="result">
 			<h2>Results Winners</h2>
