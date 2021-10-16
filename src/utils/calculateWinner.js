@@ -1,8 +1,6 @@
 import { winnerLines } from '../constants';
 
 export function calculateWinner(squares, players) {
-	// console.log(squares);
-	// console.log(winnerLines);
 	const winnerLine = winnerLines.find(
 		([a, b, c]) =>
 			squares[a] &&
@@ -11,7 +9,6 @@ export function calculateWinner(squares, players) {
 	);
 
 	if (winnerLine) {
-		// console.log(players);
 		if (squares[winnerLine[0]] === 'X') {
 			return players.player1 || 'player1';
 		} else {

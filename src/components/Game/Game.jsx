@@ -20,14 +20,7 @@ import NewGameButton from '../NewGameButton/NewGameButton';
 
 function Game() {
 	const [
-		{
-			history,
-			isGameFinish,
-			isXTurn,
-			players,
-			winnersHistory,
-			resultGame,
-		},
+		{ history, isGameFinish, isXTurn, players, winnersHistory },
 		dispatch,
 	] = useGameStore();
 	const currentStep = history[history.length - 1];
