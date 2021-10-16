@@ -38,13 +38,11 @@ function Game() {
 		const historyWinnersResult = JSON.parse(
 			localStorage.getItem('winners'),
 		);
-		console.log(historyWinnersResult);
 		historyWinnersResult &&
 			dispatch(putFromLocalStorage(historyWinnersResult));
 	}, []);
 
 	useEffect(() => {
-		// console.log('useEffect', winnersHistory);
 		localStorage.setItem('winners', JSON.stringify(winnersHistory));
 	}, [winnersHistory]);
 
@@ -53,7 +51,6 @@ function Game() {
 		squares[index] = getSignTurn(history.length, isXTurn);
 
 		const winner = calculateWinner(squares, players);
-		console.log(winner);
 		if (winner) {
 			console.log('Game Finish', winner);
 			dispatch(changeStatusGame());
@@ -61,7 +58,6 @@ function Game() {
 
 			winner !== 'Draw' && dispatch(addWinner(winner));
 		}
-		// console.log(squares);
 		dispatch(addToHistory(squares));
 	};
 
@@ -69,7 +65,6 @@ function Game() {
 		classes.push('red', 'disabled');
 	}
 
-	// console.log('2', history[history.length - 1].squares);
 	return (
 		<div>
 			<h1>
