@@ -1,0 +1,19 @@
+.inp-name {
+	padding: 10px 20px;
+}
+
+.namePlayers-btn {
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: rgb(0, 162, 255);
+	border: none;
+	&:hover {
+		cursor: pointer;
+		background-color: rgb(1, 102, 161);
+	}
+	&:disabled {
+		cursor: not-allowed;
+		background-color: transparent;
+	}
+}

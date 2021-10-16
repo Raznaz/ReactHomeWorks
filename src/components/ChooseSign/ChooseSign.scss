@@ -1,0 +1,25 @@
+.btn_newGame {
+	margin: 0 auto;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: rgb(135, 250, 135);
+	&:hover {
+		cursor: pointer;
+		background-color: rgb(222, 255, 168);
+	}
+}
+
+.chooseSignContainer {
+	margin: 20px 0;
+
+	label {
+		font-weight: 700;
+		&:hover {
+			cursor: pointer;
+			color: #ccc;
+		}
+	}
+	span {
+		margin: 0 10px;
+	}
+}

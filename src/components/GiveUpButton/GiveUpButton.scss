@@ -1,0 +1,13 @@
+.btnGiveUp {
+	padding: 10px 20px;
+	width: 100%;
+	border: none;
+	background-color: #f00;
+	&:hover {
+		cursor: pointer;
+		background-color: rgb(168, 3, 3);
+	}
+	&:disabled {
+		display: none;
+	}
+}

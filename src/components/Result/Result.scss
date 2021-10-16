@@ -1,0 +1,26 @@
+li {
+	list-style: none;
+}
+.result {
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	&__list {
+		text-align-last: left;
+		li {
+			margin-bottom: 5px;
+
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	&__winnerName {
+		display: inline-block;
+		font-size: 18px;
+		color: #fff;
+		font-weight: 700;
+		min-width: 80px;
+	}
+}

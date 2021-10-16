@@ -1,0 +1,42 @@
+.game {
+	display: flex;
+	padding: 20px;
+	margin: 20px;
+	// flex-wrap: wrap;
+	// background-color: #f3f3f3;
+	border: 3px solid transparent;
+	&__leftSide {
+		flex-basis: 25%;
+		background-color: rgb(216, 216, 216);
+		padding: 10px 10px;
+	}
+
+	&__center {
+		// margin: 0 auto;
+
+		flex-basis: 50%;
+	}
+
+	&__rightSide {
+		flex-basis: 25%;
+	}
+}
+.game-info {
+	margin: 15px;
+	color: #ffffff;
+}
+.disabled {
+	.btn {
+		cursor: not-allowed;
+		&:hover {
+			top: 0;
+			background: #ffffff;
+			color: #e5dc15;
+			box-shadow: 0 12px #c2bb11, 0 18px rgba(0, 0, 0, 0.4);
+		}
+	}
+}
+
+.red {
+	border: 3px solid rgb(255, 0, 0);
+}
