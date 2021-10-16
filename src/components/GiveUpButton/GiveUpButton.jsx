@@ -18,8 +18,6 @@ function GiveUpButton() {
 		state.players.player1,
 		state.players.player2,
 	);
-	// console.log('give up', winner);
-	console.log('GiveUP', winner);
 	const giveUpPlayer = () => {
 		dispatch(changeStatusGame());
 		dispatch(addWinner(winner));
