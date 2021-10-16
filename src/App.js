@@ -1,7 +1,5 @@
 import React from 'react';
-// import ChooseSign from './components/ChooseSign/ChooseSign';
 import Game from './components/Game/Game';
-// import History from './components/History/History';
 import { GameProvider } from './context/gameContext';
 import { gameReducer, initialState } from './reducer/gameReducer';
 import './App.scss';
