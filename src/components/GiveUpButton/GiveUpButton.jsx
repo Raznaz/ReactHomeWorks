@@ -25,7 +25,7 @@ function GiveUpButton() {
 	};
 
 	return (
-		<div>
+		<>
 			<Button
 				className="btnGiveUp"
 				onClick={() => giveUpPlayer()}
@@ -33,7 +33,7 @@ function GiveUpButton() {
 			>
 				I give up !
 			</Button>
-		</div>
+		</>
 	);
 }
 

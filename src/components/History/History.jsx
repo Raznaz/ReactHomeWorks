@@ -4,6 +4,7 @@ import { backToCurrentStep } from '../../actions';
 import { getSignTurn } from '../../utils';
 import './History.scss';
 import { bindNameSign } from '../../utils/BindNameSign';
+import Button from '../UI/Button/Button';
 
 function History() {
 	const [state, dispatch] = useGameStore();
@@ -27,13 +28,14 @@ function History() {
 			<h2>History</h2>
 			<div>
 				{state.history.map((currentStep, i) => (
-					<button
+					<Button
 						className="btnHistory"
 						key={i}
 						onClick={() => moveToStep(i)}
+						style={{ display: i === 0 && 'none' }}
 					>
 						Step #{i}
-					</button>
+					</Button>
 				))}
 			</div>
 		</div>
