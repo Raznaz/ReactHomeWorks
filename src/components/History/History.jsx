@@ -1,7 +1,8 @@
 import React from 'react';
 import { useGameStore } from '../../context/gameContext';
 import { backToCurrentStep } from '../../actions';
-import { getSignTurn } from '../../utils';
+// import { getSignTurn } from '../../utils';
+import { getSignTurn } from '../../utils/getSignTurn';
 import './History.scss';
 import { bindNameSign } from '../../utils/BindNameSign';
 import Button from '../UI/Button/Button';

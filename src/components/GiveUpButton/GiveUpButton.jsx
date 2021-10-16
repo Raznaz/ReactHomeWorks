@@ -5,7 +5,7 @@ import {
 	showResultGame,
 } from '../../actions';
 import { useGameStore } from '../../context/gameContext';
-import { getSignTurn } from '../../utils';
+import { getSignTurn } from '../../utils/getSignTurn';
 import { bindNameSign } from '../../utils/BindNameSign';
 import Button from '../UI/Button/Button';
 import './GiveUpButton.scss';

@@ -8,7 +8,7 @@ import {
 	showResultGame,
 } from '../../actions';
 import { changeStatusGame } from '../../actions';
-import { getSignTurn } from '../../utils';
+import { getSignTurn } from '../../utils/getSignTurn';
 import { calculateWinner } from '../../utils/calculateWinner';
 import './Game.scss';
 import History from '../History/History';
