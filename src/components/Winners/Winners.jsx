@@ -3,12 +3,11 @@ import { useGameStore } from '../../context/gameContext';
 import './Winner.scss';
 
 function Winners() {
-	const [state, dispatch] = useGameStore();
+	const [state] = useGameStore();
 
 	return (
 		<>
 			<p>WINNER:</p>
-
 			<h2 className="winner-btn__title">{state.resultGame}</h2>
 		</>
 	);

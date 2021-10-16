@@ -30,7 +30,6 @@ function Game() {
 		},
 		dispatch,
 	] = useGameStore();
-	console.log(resultGame);
 	const currentStep = history[history.length - 1];
 	const classes = ['game'];
 

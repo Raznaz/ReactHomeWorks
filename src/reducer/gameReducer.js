@@ -25,22 +25,12 @@ export const initialState = {
 };
 
 export const gameReducer = (state = initialState, action) => {
-	// console.log(action.payload);
-
 	switch (action.type) {
 		case SHOW_RESULT_GAME:
 			return { ...state, resultGame: action.payload };
 		case ADD_HISTORY_LOCAL_STORAGE:
-			console.log(action.payload);
 			return { ...state, winnersHistory: [...action.payload] };
-
 		case ADD_WINNER:
-			// console.log(action.payload);
-			// localStorage.setItem(
-			// 	'winners',
-			// 	JSON.stringify(state.winnersHistory),
-			// );
-			// console.log(new Date().format('m-d-Y'));
 			return {
 				...state,
 				winnersHistory: [

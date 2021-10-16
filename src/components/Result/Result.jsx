@@ -2,7 +2,7 @@ import { useGameStore } from '../../context/gameContext';
 import './Result.scss';
 
 function Result() {
-	const [state, dispatch] = useGameStore();
+	const [state] = useGameStore();
 	return (
 		<div className="result">
 			<h2>Results Winners</h2>
