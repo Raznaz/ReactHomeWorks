@@ -12,17 +12,6 @@ function NamePlayers() {
 		isShow: true,
 	});
 	const [state, dispatch] = useGameStore();
-	// console.log(players);
-
-	// useEffect( () => {if (!state.isGameFinish) {
-	// 	setPlayerNames({ ...playerNames, isShow: false }),[state.isGameFinish])}
-
-	// }
-
-	// useEffect(() => {
-	// 	console.log('my test');
-	// 	setPlayerNames({ ...playerNames, isShow: true });
-	// }, [state.isGameFinish]);
 
 	const handlePlayersName = (event) => {
 		setPlayerNames({
@@ -38,15 +27,10 @@ function NamePlayers() {
 			return;
 		}
 		dispatch(changePlayerName(playerNames));
-		// setPlayerNames({ player1: '', player2: '', isShow: false });
-		// setPlayerNames({ ...playerNames, isShow: false });
 	};
 
 	return (
-		<div
-		// style={{ display: playerNames.isShow ? 'block' : 'none' }}
-		// className={classes.join(' ')}
-		>
+		<div>
 			<form>
 				<label>Player name #1 (X)</label>
 				<Input
