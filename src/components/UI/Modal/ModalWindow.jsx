@@ -11,10 +11,9 @@ function ModalWindow({ children, ...props }) {
 
 	// console.log('STATE:', state);
 	return (
-		<div>
+		<>
 			<Modal
 				open={modal.isModalShow}
-				// open={true}
 				onClose={() => dispatch(closeModal())}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
@@ -39,9 +38,9 @@ function ModalWindow({ children, ...props }) {
 					</Typography>
 					<Typography
 						id="modal-modal-title"
-						variant="h5"
-						component="h5"
-						sx={{ textAlign: 'center', fontSize: '30px' }}
+						variant="p"
+						component="p"
+						sx={{ textAlign: 'center', fontSize: '18px' }}
 					>
 						id: {props.currentUser.id}
 					</Typography>
@@ -58,7 +57,7 @@ function ModalWindow({ children, ...props }) {
 					</Typography>
 				</Box>
 			</Modal>
-		</div>
+		</>
 	);
 }
 

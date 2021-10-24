@@ -50,50 +50,48 @@ function Registration() {
 	};
 
 	return (
-		<>
-			<Box
-				sx={{
-					bgcolor: 'lightblue',
-					width: 300,
-					height: 400,
-					margin: '0 auto',
-					p: 2,
-				}}
+		<Box
+			sx={{
+				bgcolor: 'lightblue',
+				width: 300,
+				height: 400,
+				margin: '0 auto',
+				p: 2,
+			}}
+		>
+			<Typography
+				component="h2"
+				variant="h5"
+				sx={{ textAlign: 'center' }}
 			>
-				<Typography
-					component="h2"
-					variant="h5"
-					sx={{ textAlign: 'center' }}
-				>
-					Registration user
-				</Typography>
-				<Form onSubmit={handleSubmit(onSubmit)}>
-					<Input
-						{...register('firstName')}
-						id="firstName"
-						type="text"
-						label="First name"
-						name="firstName"
-						error={!!errors.firstName}
-						helperText={errors?.firstName?.message}
-					/>
-					<Input
-						{...register('lastName')}
-						id="lastName"
-						type="text"
-						label="Last name"
-						name="lastName"
-						error={!!errors.lastName}
-						helperText={errors?.lastName?.message}
-						sx={{ mb: 6 }}
-					/>
-					<MyButton color="success">Register participant</MyButton>
-				</Form>
-			</Box>
+				Registration user
+			</Typography>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Input
+					{...register('firstName')}
+					id="firstName"
+					type="text"
+					label="First name"
+					name="firstName"
+					error={!!errors.firstName}
+					helperText={errors?.firstName?.message}
+				/>
+				<Input
+					{...register('lastName')}
+					id="lastName"
+					type="text"
+					label="Last name"
+					name="lastName"
+					error={!!errors.lastName}
+					helperText={errors?.lastName?.message}
+					sx={{ mb: 6 }}
+				/>
+				<MyButton color="success">Register participant</MyButton>
+			</Form>
 			<ModalWindow title="Participant" currentUser={usersArr.newUser}>
 				<Timer />
 			</ModalWindow>
-		</>
+		</Box>
 	);
 }
 

@@ -12,9 +12,9 @@ function Header() {
 			<AppBar position="static">
 				<Toolbar>
 					<Typography
-						variant="h6"
+						variant="h4"
+						component="h1"
 						noWrap
-						component="div"
 						sx={{ display: { xs: 'none', sm: 'block' } }}
 					>
 						HomeWork 4

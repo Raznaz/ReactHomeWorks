@@ -13,6 +13,7 @@ import {
 } from '../../redux/actions/timerActions';
 import { addUser } from '../../redux/actions/userActions';
 import faker from 'faker';
+import { Box } from '@mui/system';
 
 function Timer() {
 	const dispatch = useDispatch();
@@ -84,16 +85,15 @@ function Timer() {
 	const formatedTime = handleTimeCalibration(time);
 
 	return (
-		<div>
+		<Box>
 			<Typography
 				component="div"
-				variant="h5"
+				variant="div"
 				sx={{ textAlign: 'center', mb: 3, fontWeight: '700' }}
 			>
 				{formatedTime.hr}:{formatedTime.min}:{formatedTime.sec}:
 				{formatedTime.ms}
 			</Typography>
-			<Divider />
 			{!isTimerWork ? (
 				<MyButton
 					onClick={() => handleTimerStart()}
@@ -125,7 +125,6 @@ function Timer() {
 			>
 				Reset
 			</MyButton>
-			<Divider sx={{ mb: 6 }} />
 			<MyButton
 				onClick={() => saveResult()}
 				sx={{ bgcolor: 'green' }}
@@ -139,8 +138,7 @@ function Timer() {
 			>
 				Cancel
 			</MyButton>
-			<hr />
-		</div>
+		</Box>
 	);
 }
 

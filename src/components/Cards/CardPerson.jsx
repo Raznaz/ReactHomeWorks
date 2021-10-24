@@ -12,7 +12,6 @@ import MyButton from '../UI/Button/MyButton';
 
 function CardPerson(props) {
 	const { id, firstName, lastName, img, time } = props;
-	// console.log(id, firstName, lastName, );
 
 	const dispatch = useDispatch();
 
