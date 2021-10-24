@@ -87,9 +87,14 @@ function Timer() {
 	return (
 		<Box>
 			<Typography
-				component="div"
-				variant="div"
-				sx={{ textAlign: 'center', mb: 3, fontWeight: '700' }}
+				component="p"
+				variant="p"
+				sx={{
+					textAlign: 'center',
+					mb: 3,
+					fontWeight: '700',
+					fontSize: '40px',
+				}}
 			>
 				{formatedTime.hr}:{formatedTime.min}:{formatedTime.sec}:
 				{formatedTime.ms}
@@ -98,14 +103,14 @@ function Timer() {
 				<MyButton
 					onClick={() => handleTimerStart()}
 					disabled={!isBlockBtn ? false : true}
-					sx={{ bgcolor: 'green', mb: 1 }}
+					sx={{ bgcolor: 'green', mb: 1, width: '200px', p: 2 }}
 				>
 					Start
 				</MyButton>
 			) : (
 				<MyButton
 					onClick={() => handleTimerStart()}
-					sx={{ bgcolor: 'purple', mb: 1 }}
+					sx={{ bgcolor: 'purple', mb: 1, width: '200px', p: 2 }}
 				>
 					Continue
 				</MyButton>
@@ -114,30 +119,32 @@ function Timer() {
 			<MyButton
 				onClick={() => handleTimerStop()}
 				disabled={!isBlockBtn || isTimerWork}
-				sx={{ bgcolor: 'red', mb: 1 }}
+				sx={{ bgcolor: 'red', mb: 1, width: '200px', p: 2 }}
 			>
 				Stop
 			</MyButton>
 			<MyButton
 				onClick={() => handleTimerReset()}
 				disabled={!isTimerWork && !isBlockBtn}
-				sx={{ bgcolor: 'orange', mb: 1 }}
+				sx={{ bgcolor: 'orange', mb: 1, width: '100%' }}
 			>
 				Reset
 			</MyButton>
-			<MyButton
-				onClick={() => saveResult()}
-				sx={{ bgcolor: 'green' }}
-				disabled={!isTimerWork}
-			>
-				Save
-			</MyButton>
-			<MyButton
-				onClick={() => cancelResult()}
-				sx={{ bgcolor: 'red' }}
-			>
-				Cancel
-			</MyButton>
+			<Box sx={{ display: 'flex', mt: 6 }}>
+				<MyButton
+					onClick={() => saveResult()}
+					sx={{ bgcolor: 'green', margin: '0 10px' }}
+					disabled={!isTimerWork}
+				>
+					Save
+				</MyButton>
+				<MyButton
+					onClick={() => cancelResult()}
+					sx={{ bgcolor: 'red', margin: '0 10px' }}
+				>
+					Cancel
+				</MyButton>
+			</Box>
 		</Box>
 	);
 }

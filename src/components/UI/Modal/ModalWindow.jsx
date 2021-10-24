@@ -20,19 +20,26 @@ function ModalWindow({ children, ...props }) {
 			>
 				<Box
 					sx={{
-						width: '200px',
+						maxWidth: '400px',
 						minHeight: '400px',
 						margin: '0 auto',
 						transform: 'translate(-50%, 20%)',
 						bgcolor: '#fff',
-						p: 3,
+						p: 2,
+						borderRadius: '20px',
+						boxShadow: '2px 2px 10px 0px #000',
 					}}
 				>
 					<Typography
 						id="modal-modal-title"
 						variant="h6"
 						component="h6"
-						sx={{ textAlign: 'center', fontSize: '20px' }}
+						sx={{
+							textAlign: 'center',
+							fontSize: '20px',
+							color: '#222',
+							mb: 2,
+						}}
 					>
 						{props.title}
 					</Typography>
