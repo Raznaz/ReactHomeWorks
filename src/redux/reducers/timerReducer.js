@@ -2,7 +2,6 @@ import {
 	TIME_WORK,
 	BLOCK_BUTTON,
 	TIME,
-	TIMER_RESULT,
 } from '../actions/timerActions';
 
 const initialState = {

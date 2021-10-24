@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import MyButton from '../UI/Button/MyButton';
 import { handleTimeCalibration } from '../../utils/timeCalibration';
@@ -10,12 +10,9 @@ import {
 	timerWork,
 	blockButtons,
 	currentTime,
-	timerResult,
 } from '../../redux/actions/timerActions';
 import { addUser } from '../../redux/actions/userActions';
 import faker from 'faker';
-
-let timerId = null;
 
 function Timer() {
 	const dispatch = useDispatch();
@@ -25,6 +22,8 @@ function Timer() {
 
 	const { newUser } = useSelector((state) => state.usersArr);
 
+	const timerId = useRef(null);
+	console.log(timerId.current);
 	// useEffect(() => {
 	// 	const timesFromLS = JSON.parse(localStorage.getItem('times'));
 	// 	timesFromLS && setResult([...result, ...timesFromLS]);
@@ -46,13 +45,13 @@ function Timer() {
 
 	const handleTimerStop = () => {
 		dispatch(timerWork(true));
-		clearInterval(timerId);
+		clearInterval(timerId.current);
 	};
 
 	const handleTimerReset = () => {
 		dispatch(timerWork(false));
 		dispatch(blockButtons(false));
-		clearInterval(timerId);
+		clearInterval(timerId.current);
 		dispatch(currentTime(0));
 	};
 
@@ -73,11 +72,11 @@ function Timer() {
 		dispatch(timerWork(false));
 		dispatch(currentTime(0));
 		dispatch(blockButtons(!isBlockBtn));
-		clearInterval(timerId);
+		clearInterval(timerId.current);
 	};
 
 	const tick = (startMoment) => {
-		timerId = setInterval(() => {
+		timerId.current = setInterval(() => {
 			dispatch(currentTime(Date.now() - startMoment));
 		}, 0);
 	};

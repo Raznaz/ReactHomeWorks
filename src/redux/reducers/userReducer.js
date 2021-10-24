@@ -27,7 +27,7 @@ export function userReducer(state = initialState, action) {
 					filterValue: value,
 					filteredUsers: state.users.filter(
 						(user) =>
-							(user.firstName + user.lastName)
+							(user.firstName + ' ' + user.lastName)
 								.toLowerCase()
 								.includes(action.payload.toLowerCase()) ||
 							user.id.toString().includes(action.payload),
