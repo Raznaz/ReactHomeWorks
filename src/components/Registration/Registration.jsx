@@ -84,7 +84,7 @@ function Registration() {
 					name="lastName"
 					error={!!errors.lastName}
 					helperText={errors?.lastName?.message}
-					sx={{ mb: 6 }}
+					sx={{ mb: 12 }}
 				/>
 				<MyButton color="success">Register participant</MyButton>
 			</Form>

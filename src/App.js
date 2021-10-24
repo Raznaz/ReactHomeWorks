@@ -17,7 +17,7 @@ function App() {
 						<Search />
 						<CardsList />
 					</Grid>
-					<Grid item xs={4} sx={{ bgcolor: '#eee' }}>
+					<Grid item xs={4} sx={{ bgcolor: '#eee', p: 2 }}>
 						<Registration />
 						<WinnerInfo />
 					</Grid>

@@ -14,7 +14,7 @@ function WinnerInfo() {
 	return (
 		<Box
 			sx={{
-				bgcolor: '#f06292',
+				bgcolor: '#67d2e0',
 				minWidth: '50%',
 				margin: '50px auto',
 				p: 2,
