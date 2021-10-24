@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import MyButton from '../UI/Button/MyButton';
 import { handleTimeCalibration } from '../../utils/timeCalibration';
-import { Divider, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/actions/modalActions';
 import { useSelector } from 'react-redux';
@@ -87,8 +87,8 @@ function Timer() {
 	return (
 		<Box>
 			<Typography
-				component="p"
-				variant="p"
+				component="div"
+				variant="div"
 				sx={{
 					textAlign: 'center',
 					mb: 3,

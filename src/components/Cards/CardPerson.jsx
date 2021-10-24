@@ -36,8 +36,8 @@ function CardPerson(props) {
 			<CardContent>
 				<Typography
 					gutterBottom
-					variant="p"
-					component="p"
+					variant="div"
+					component="div"
 					sx={{ fontWeight: '700' }}
 				>
 					{firstName} {lastName}

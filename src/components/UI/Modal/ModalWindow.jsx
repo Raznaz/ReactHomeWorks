@@ -9,7 +9,6 @@ function ModalWindow({ children, ...props }) {
 
 	const dispatch = useDispatch();
 
-	// console.log('STATE:', state);
 	return (
 		<>
 			<Modal
@@ -45,8 +44,8 @@ function ModalWindow({ children, ...props }) {
 					</Typography>
 					<Typography
 						id="modal-modal-title"
-						variant="p"
-						component="p"
+						variant="div"
+						component="div"
 						sx={{ textAlign: 'center', fontSize: '18px' }}
 					>
 						id: {props.currentUser.id}

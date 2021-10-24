@@ -3,6 +3,12 @@ export const ADD_USER = '[USER] add user';
 export const FILTER_USER = '[USER] filter user';
 export const NEW_USER = '[USER] new user';
 export const SHOW_WINNER = '[USER] winner user';
+export const GET_USERS_FROM_LS = '[USER] users from LS';
+
+export const getUsersFromLS = (arrFromLS) => ({
+	type: GET_USERS_FROM_LS,
+	payload: { arrFromLS },
+});
 
 export const removeUser = (id) => ({
 	type: REMOVE_USER,
