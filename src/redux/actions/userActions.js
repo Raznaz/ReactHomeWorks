@@ -44,12 +44,3 @@ export const showWinner = (status) => ({
 	type: SHOW_WINNER,
 	payload: status,
 });
-
-// TODO:Позже удалить эту ф-ю
-export const delay = (status) => {
-	return (dispatch) => {
-		setTimeout(() => {
-			dispatch(showWinner(status));
-		}, 2000);
-	};
-};

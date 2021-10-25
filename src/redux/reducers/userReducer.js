@@ -70,7 +70,6 @@ export function userReducer(state = initialState, action) {
 			};
 
 		case REMOVE_USER:
-			// console.log('STATE:', state.users, 'ACTION:', action);
 			return {
 				...state,
 				users: state.users.filter(

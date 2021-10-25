@@ -15,27 +15,27 @@ function CardsList() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		// const participantsFromLS = JSON.parse(
-		// 	localStorage.getItem('listParticipant'),
-		// );
+		const participantsFromLS = JSON.parse(
+			localStorage.getItem('listParticipant'),
+		);
 
-		// participantsFromLS
-		// 	? dispatch(getUsersFromLS(participantsFromLS))
-		// 	: dispatch(getUsersFromLS(usersArr.users));
+		participantsFromLS
+			? dispatch(getUsersFromLS(participantsFromLS))
+			: dispatch(getUsersFromLS(usersArr.users));
 
 		dispatch(fetchUser());
 	}, []);
 
-	// useEffect(() => {
-	// 	dispatch(filterUsers());
-	// }, [usersArr.users.data]);
+	useEffect(() => {
+		dispatch(filterUsers());
+	}, [usersArr.users]);
 
-	// useEffect(() => {
-	// 	localStorage.setItem(
-	// 		'listParticipant',
-	// 		JSON.stringify(usersArr.users),
-	// 	);
-	// }, [usersArr.users]);
+	useEffect(() => {
+		localStorage.setItem(
+			'listParticipant',
+			JSON.stringify(usersArr.users),
+		);
+	}, [usersArr.users]);
 
 	return (
 		<Grid
@@ -44,7 +44,7 @@ function CardsList() {
 			justifyContent="space-between"
 			alignItems="center"
 		>
-			{usersArr.users.map((user, i) => (
+			{usersArr.filteredUsers.map((user, i) => (
 				<Grid key={user.id} item>
 					<CardPerson {...user} />
 				</Grid>
