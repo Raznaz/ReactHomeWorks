@@ -1,11 +1,19 @@
-import { fetchUserSuccess, showWinner } from './userActions';
+import {
+	fetchUserSuccess,
+	hideLoading,
+	showLoading,
+	showWinner,
+} from './userActions';
 import { fetchUsers } from '../../api';
 
 export const fetchUser = () => {
 	return async (dispatch) => {
+		dispatch(showLoading());
 		const users = await Promise.resolve(fetchUsers());
-		console.log('FETCH user', users);
-		dispatch(fetchUserSuccess(users.data));
+		setTimeout(() => {
+			dispatch(fetchUserSuccess(users.data));
+			dispatch(hideLoading());
+		}, 2000);
 	};
 };
 

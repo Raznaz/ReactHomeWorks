@@ -5,8 +5,18 @@ export const NEW_USER = '[USER] new user';
 export const SHOW_WINNER = '[USER] winner user';
 export const GET_USERS_FROM_LS = '[USER] users from LS';
 
+export const SHOW_LOADING = '[USER] Show loading';
+export const HIDE_LOADING = '[USER] Hide loading';
 export const FETCH_USER = '[USER] Fetch users';
 export const FETCH_USER_SUCCESS = '[USER] Fetch users success';
+
+export const showLoading = () => ({
+	type: SHOW_LOADING,
+});
+
+export const hideLoading = () => ({
+	type: HIDE_LOADING,
+});
 
 export const fetchUserSuccess = (users) => ({
 	type: FETCH_USER_SUCCESS,

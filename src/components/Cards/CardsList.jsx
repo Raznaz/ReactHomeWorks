@@ -7,11 +7,11 @@ import {
 	filterUsers,
 	getUsersFromLS,
 } from '../../redux/actions/userActions';
+import Loader from '../UI/Loader/Loader';
 import CardPerson from './CardPerson';
 
 function CardsList() {
 	const { usersArr } = useSelector((state) => state);
-	console.log(usersArr.users);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -36,6 +36,10 @@ function CardsList() {
 			JSON.stringify(usersArr.users),
 		);
 	}, [usersArr.users]);
+
+	if (usersArr.isLoading) {
+		return <Loader />;
+	}
 
 	return (
 		<Grid

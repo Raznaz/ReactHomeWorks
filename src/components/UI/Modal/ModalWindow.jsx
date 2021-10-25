@@ -31,8 +31,8 @@ function ModalWindow({ children, ...props }) {
 				>
 					<Typography
 						id="modal-modal-title"
-						variant="h6"
-						component="h6"
+						variant="div"
+						component="div"
 						sx={{
 							textAlign: 'center',
 							fontSize: '20px',
@@ -52,8 +52,8 @@ function ModalWindow({ children, ...props }) {
 					</Typography>
 					<Typography
 						id="modal-modal-title"
-						variant="h5"
-						component="h5"
+						variant="div"
+						component="div"
 						sx={{ textAlign: 'center', fontSize: '30px' }}
 					>
 						{props.currentUser.firstName} {props.currentUser.lastName}

@@ -4,8 +4,10 @@ import {
 	FETCH_USER_SUCCESS,
 	FILTER_USER,
 	GET_USERS_FROM_LS,
+	HIDE_LOADING,
 	NEW_USER,
 	REMOVE_USER,
+	SHOW_LOADING,
 	SHOW_WINNER,
 } from '../actions/userActions';
 
@@ -18,12 +20,16 @@ const initialState = {
 	userWin: {},
 	isShowWinner: false,
 	filterValue: '',
+	isLoading: false,
 };
 
 export function userReducer(state = initialState, action) {
 	switch (action.type) {
+		case SHOW_LOADING:
+			return { ...state, isLoading: true };
+		case HIDE_LOADING:
+			return { ...state, isLoading: false };
 		case FETCH_USER_SUCCESS:
-			console.log('FETCH_USER_SUCCESS:');
 			return { ...state, users: action.payload.users };
 		case GET_USERS_FROM_LS:
 			return { ...state, users: action.payload.arrFromLS };
