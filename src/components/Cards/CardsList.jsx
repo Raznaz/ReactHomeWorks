@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {
+	fetchUser,
 	filterUsers,
 	getUsersFromLS,
 } from '../../redux/actions/userActions';
@@ -16,13 +17,12 @@ function CardsList() {
 		const participantsFromLS = JSON.parse(
 			localStorage.getItem('listParticipant'),
 		);
-		console.log('LOCAL STORAGE', participantsFromLS);
-		// participantsFromLS &&
-		// 	console.log('OKKK', participantsFromLS) &&
-		participantsFromLS
-			? dispatch(getUsersFromLS(participantsFromLS))
-			: dispatch(getUsersFromLS(usersArr.users));
-		// dispatch(filterUsers());
+
+		// participantsFromLS
+		// 	? dispatch(getUsersFromLS(participantsFromLS))
+		// 	: dispatch(getUsersFromLS(usersArr.users));
+
+		dispatch(fetchUser());
 	}, []);
 
 	useEffect(() => {

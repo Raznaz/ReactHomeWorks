@@ -1,9 +1,28 @@
+import { users as usersAsync } from '../../data/users';
+
 export const REMOVE_USER = '[USER] remove user';
 export const ADD_USER = '[USER] add user';
 export const FILTER_USER = '[USER] filter user';
 export const NEW_USER = '[USER] new user';
 export const SHOW_WINNER = '[USER] winner user';
 export const GET_USERS_FROM_LS = '[USER] users from LS';
+
+export const FETCH_USER = '[USER] Fetch users';
+export const FETCH_USER_SUCCESS = '[USER] Fetch users success';
+
+export const fetchUser = () => {
+	return async (dispatch) => {
+		const users = await Promise.resolve(usersAsync);
+		dispatch(fetchUserSuccess(users));
+	};
+};
+
+export const fetchUserSuccess = (users) => ({
+	type: FETCH_USER_SUCCESS,
+	payload: { users },
+});
+
+// ---
 
 export const getUsersFromLS = (arrFromLS) => ({
 	type: GET_USERS_FROM_LS,
@@ -34,3 +53,12 @@ export const showWinner = (status) => ({
 	type: SHOW_WINNER,
 	payload: status,
 });
+
+// TODO:Позже удалить эту ф-ю
+export const delay = (status) => {
+	return (dispatch) => {
+		setTimeout(() => {
+			dispatch(showWinner(status));
+		}, 2000);
+	};
+};
