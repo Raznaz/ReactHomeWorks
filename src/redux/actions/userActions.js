@@ -1,5 +1,3 @@
-import { users as usersAsync } from '../../data/users';
-
 export const REMOVE_USER = '[USER] remove user';
 export const ADD_USER = '[USER] add user';
 export const FILTER_USER = '[USER] filter user';
@@ -9,13 +7,6 @@ export const GET_USERS_FROM_LS = '[USER] users from LS';
 
 export const FETCH_USER = '[USER] Fetch users';
 export const FETCH_USER_SUCCESS = '[USER] Fetch users success';
-
-export const fetchUser = () => {
-	return async (dispatch) => {
-		const users = await Promise.resolve(usersAsync);
-		dispatch(fetchUserSuccess(users));
-	};
-};
 
 export const fetchUserSuccess = (users) => ({
 	type: FETCH_USER_SUCCESS,

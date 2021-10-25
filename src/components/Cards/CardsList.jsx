@@ -2,8 +2,8 @@ import { Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { fetchUser } from '../../redux/actions/thunks';
 import {
-	fetchUser,
 	filterUsers,
 	getUsersFromLS,
 } from '../../redux/actions/userActions';
@@ -11,12 +11,13 @@ import CardPerson from './CardPerson';
 
 function CardsList() {
 	const { usersArr } = useSelector((state) => state);
+	console.log(usersArr.users);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const participantsFromLS = JSON.parse(
-			localStorage.getItem('listParticipant'),
-		);
+		// const participantsFromLS = JSON.parse(
+		// 	localStorage.getItem('listParticipant'),
+		// );
 
 		// participantsFromLS
 		// 	? dispatch(getUsersFromLS(participantsFromLS))
@@ -25,16 +26,16 @@ function CardsList() {
 		dispatch(fetchUser());
 	}, []);
 
-	useEffect(() => {
-		dispatch(filterUsers());
-	}, [usersArr.users]);
+	// useEffect(() => {
+	// 	dispatch(filterUsers());
+	// }, [usersArr.users.data]);
 
-	useEffect(() => {
-		localStorage.setItem(
-			'listParticipant',
-			JSON.stringify(usersArr.users),
-		);
-	}, [usersArr.users]);
+	// useEffect(() => {
+	// 	localStorage.setItem(
+	// 		'listParticipant',
+	// 		JSON.stringify(usersArr.users),
+	// 	);
+	// }, [usersArr.users]);
 
 	return (
 		<Grid
@@ -43,7 +44,7 @@ function CardsList() {
 			justifyContent="space-between"
 			alignItems="center"
 		>
-			{usersArr.filteredUsers.map((user, i) => (
+			{usersArr.users.map((user, i) => (
 				<Grid key={user.id} item>
 					<CardPerson {...user} />
 				</Grid>

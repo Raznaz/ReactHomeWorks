@@ -1,4 +1,4 @@
-import { users } from '../../data/users';
+// import { users } from '../../data/users';
 import {
 	ADD_USER,
 	FETCH_USER_SUCCESS,
@@ -23,6 +23,7 @@ const initialState = {
 export function userReducer(state = initialState, action) {
 	switch (action.type) {
 		case FETCH_USER_SUCCESS:
+			console.log('FETCH_USER_SUCCESS:');
 			return { ...state, users: action.payload.users };
 		case GET_USERS_FROM_LS:
 			return { ...state, users: action.payload.arrFromLS };
