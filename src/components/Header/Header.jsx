@@ -17,7 +17,7 @@ function Header() {
 						noWrap
 						sx={{ display: { xs: 'none', sm: 'block' } }}
 					>
-						HomeWork 4
+						HomeWork 4 ASYNC (Основная домашка это HW4 (без async))
 					</Typography>
 
 					<Box sx={{ flexGrow: 1 }} />

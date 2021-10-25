@@ -64,7 +64,7 @@ function WinnerInfo() {
 					<MyButton
 						color="warning"
 						onClick={() =>
-							// TODO: Переделать
+							// TODO: Переделать обратно без задержки
 							// dispatch(showWinner(usersArr.isShowWinner))
 							dispatch(delay(usersArr.isShowWinner))
 						}
