@@ -39,9 +39,30 @@ function CompetitionItem(props) {
 					{name}
 				</Typography>
 				<Typography variant="body2" sx={{ color: 'blue' }}>
-					STATUS:{status ? 'finished' : 'active'}
+					STATUS:
+					{status ? (
+						<span
+							style={{
+								color: 'green',
+								fontSize: '16px',
+								marginLeft: '5px',
+							}}
+						>
+							Active
+						</span>
+					) : (
+						<span
+							style={{
+								color: 'red',
+								fontSize: '14px',
+								marginLeft: '5px',
+							}}
+						>
+							Finished
+						</span>
+					)}
 				</Typography>
-				<Typography variant="body2" sx={{ color: 'green' }}>
+				<Typography variant="body2" sx={{ color: 'blue' }}>
 					WINNER:{winner}
 				</Typography>
 			</CardContent>

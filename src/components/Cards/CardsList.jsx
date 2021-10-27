@@ -16,7 +16,7 @@ function CardsList() {
 		const participantsFromLS = JSON.parse(
 			localStorage.getItem('listParticipant'),
 		);
-		console.log('LOCAL STORAGE', participantsFromLS);
+		// console.log('LOCAL STORAGE', participantsFromLS);
 		// participantsFromLS &&
 		// 	console.log('OKKK', participantsFromLS) &&
 		participantsFromLS

@@ -1,6 +1,6 @@
 export const competitions = [
 	{
-		id: 94329055,
+		id: '94329055',
 		name: 'running 100 meters',
 		status: false,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(
@@ -9,7 +9,7 @@ export const competitions = [
 		winner: '',
 	},
 	{
-		id: 43985435,
+		id: '43985435',
 		name: 'running 50 meters',
 		status: false,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(
@@ -18,7 +18,7 @@ export const competitions = [
 		winner: '',
 	},
 	{
-		id: 64386546,
+		id: '64386546',
 		name: 'jump',
 		status: true,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(
@@ -27,7 +27,7 @@ export const competitions = [
 		winner: '',
 	},
 	{
-		id: 74574575,
+		id: '74574575',
 		name: 'eating burgers',
 		status: true,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(
@@ -36,7 +36,7 @@ export const competitions = [
 		winner: '',
 	},
 	{
-		id: 24587658,
+		id: '24587658',
 		name: 'drink 4 liters beer',
 		status: false,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(

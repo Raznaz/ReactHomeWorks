@@ -1,5 +1,8 @@
 import { competitions } from '../../data/competitions';
-import { CREATE_NEW_COMPETITION } from '../actions/competitionActions';
+import {
+	CHANGE_STATUS,
+	CREATE_NEW_COMPETITION,
+} from '../actions/competitionActions';
 
 const initialState = {
 	competitions: competitions,
@@ -12,6 +15,22 @@ export const competitionsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				competitions: [...state.competitions, action.payload.newComp],
+			};
+		case CHANGE_STATUS:
+			console.log('test change status', action.payload.idGame);
+			return {
+				...state,
+				competitions: state.competitions.map(
+					(comp) => {
+						if (comp.id === action.payload.idGame) {
+							console.log('совпадает', comp.id);
+							comp.status = false;
+						}
+
+						return comp;
+					},
+					// comp.id === +action.payload.idGame
+				),
 			};
 
 		default:

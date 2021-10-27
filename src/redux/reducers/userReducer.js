@@ -21,7 +21,7 @@ const initialState = {
 export function userReducer(state = initialState, action) {
 	switch (action.type) {
 		case GET_USERS_FROM_LS:
-			console.log('GET_USERS_FROM_LS', action.payload.arrFromLS);
+			// console.log('GET_USERS_FROM_LS', action.payload.arrFromLS);
 			return { ...state, users: action.payload.arrFromLS };
 		case FILTER_USER:
 			const value = action.payload;

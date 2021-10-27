@@ -7,7 +7,7 @@ function CompetitionsList() {
 	const { competitions } = useSelector(
 		(state) => state.competitionsArr,
 	);
-	console.log('STATE:', competitions);
+	// console.log('STATE:', competitions);
 	return (
 		<Grid
 			container

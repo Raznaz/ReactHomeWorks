@@ -36,10 +36,10 @@ function CreateCompetition() {
 		console.log(data);
 
 		const newComp = {
-			id: uuidv4(),
+			id: `${Math.floor(Math.random() * 100000)}`,
 			name: data.compName,
 			img: `https://cdn.fakercloud.com/avatars/amayvs_128.jpg`,
-			status: false,
+			status: true,
 			winner: '',
 		};
 		dispatch(createNewCompetition(newComp));

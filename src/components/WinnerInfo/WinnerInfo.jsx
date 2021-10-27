@@ -2,11 +2,13 @@ import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { changeStatusCompetition } from '../../redux/actions/competitionActions';
 import { showWinner } from '../../redux/actions/userActions';
 import { handleTimeCalibration } from '../../utils/timeCalibration';
 import MyButton from '../UI/Button/MyButton';
 
-function WinnerInfo() {
+function WinnerInfo({ idGame }) {
+	console.log('winnerInfo', idGame);
 	const { usersArr } = useSelector((state) => state);
 	const dispatch = useDispatch();
 
@@ -41,9 +43,7 @@ function WinnerInfo() {
 					</Typography>
 					<MyButton
 						color="warning"
-						onClick={() =>
-							dispatch(showWinner(usersArr.isShowWinner))
-						}
+						onClick={() => dispatch(changeStatusCompetition(idGame))}
 					>
 						Close
 					</MyButton>
