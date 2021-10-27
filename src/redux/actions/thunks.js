@@ -19,7 +19,7 @@ export const fetchUser = () => {
 
 // TODO:Задержка при SHOW WINNER (test)
 export const delay = (status) => {
-	return (dispatch) => {
+	return (dispatch) => { 
 		setTimeout(() => {
 			dispatch(showWinner(status));
 		}, 500);
