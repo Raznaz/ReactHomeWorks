@@ -40,7 +40,8 @@ function CreateCompetition() {
 			name: data.compName,
 			img: `https://cdn.fakercloud.com/avatars/amayvs_128.jpg`,
 			status: true,
-			winner: '',
+			winnerName: '',
+			time: '',
 		};
 		dispatch(createNewCompetition(newComp));
 		reset();

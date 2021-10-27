@@ -7,7 +7,7 @@ export const createNewCompetition = (newComp) => ({
 	payload: { newComp },
 });
 
-export const changeStatusCompetition = (idGame) => ({
+export const changeStatusCompetition = (idGame, winner) => ({
 	type: CHANGE_STATUS,
-	payload: { idGame },
+	payload: { idGame, winner },
 });

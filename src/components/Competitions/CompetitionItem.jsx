@@ -9,7 +9,7 @@ import MyButton from '../UI/Button/MyButton';
 import { Link } from 'react-router-dom';
 
 function CompetitionItem(props) {
-	const { id, name, status, img, winner } = props;
+	const { id, name, status, img, winnerName } = props;
 	return (
 		<Card
 			sx={{
@@ -62,9 +62,16 @@ function CompetitionItem(props) {
 						</span>
 					)}
 				</Typography>
-				<Typography variant="body2" sx={{ color: 'blue' }}>
-					WINNER:{winner}
-				</Typography>
+				{status ? null : (
+					<Typography variant="body2" sx={{ color: 'blue' }}>
+						WINNER:{' '}
+						<div
+							style={{ color: 'yellow', backgroundColor: 'black' }}
+						>
+							{winnerName}
+						</div>
+					</Typography>
+				)}
 			</CardContent>
 
 			{/* <MyButton

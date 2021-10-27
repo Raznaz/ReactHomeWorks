@@ -8,9 +8,20 @@ import { handleTimeCalibration } from '../../utils/timeCalibration';
 import MyButton from '../UI/Button/MyButton';
 
 function WinnerInfo({ idGame }) {
-	console.log('winnerInfo', idGame);
+	// console.log('winnerInfo', idGame);
 	const { usersArr } = useSelector((state) => state);
+	console.log(usersArr);
 	const dispatch = useDispatch();
+
+	const addWinnerToCardCompetition = () => {
+		const cardComp = {
+			winnerName:
+				usersArr.userWin.firstName + ' ' + usersArr.userWin.lastName,
+			time: usersArr.userWin.time,
+		};
+		console.log('cardComp', cardComp);
+		dispatch(changeStatusCompetition(idGame, cardComp));
+	};
 
 	const formatedTime = handleTimeCalibration(usersArr.userWin.time);
 	return (
@@ -43,7 +54,7 @@ function WinnerInfo({ idGame }) {
 					</Typography>
 					<MyButton
 						color="warning"
-						onClick={() => dispatch(changeStatusCompetition(idGame))}
+						onClick={() => addWinnerToCardCompetition()}
 					>
 						Close
 					</MyButton>

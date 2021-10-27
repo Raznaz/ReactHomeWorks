@@ -17,7 +17,7 @@ export const competitionsReducer = (state = initialState, action) => {
 				competitions: [...state.competitions, action.payload.newComp],
 			};
 		case CHANGE_STATUS:
-			console.log('test change status', action.payload.idGame);
+			console.log('test change status', action.payload);
 			return {
 				...state,
 				competitions: state.competitions.map(
@@ -25,6 +25,8 @@ export const competitionsReducer = (state = initialState, action) => {
 						if (comp.id === action.payload.idGame) {
 							console.log('совпадает', comp.id);
 							comp.status = false;
+							comp.winnerName = action.payload.winner.winnerName;
+							comp.time = action.payload.winner.time;
 						}
 
 						return comp;

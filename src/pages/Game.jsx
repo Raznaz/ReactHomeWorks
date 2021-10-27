@@ -15,7 +15,7 @@ function Game() {
 
 	const { id } = useParams();
 	console.log(id);
-	const { status, name, winner } = competitions.find(
+	const { status, name, winnerName, time } = competitions.find(
 		(comp) => comp.id === id,
 	);
 	// console.log(status);
@@ -34,8 +34,8 @@ function Game() {
 						{/* <WinnerInfo /> */}
 						<div>ID game: {id}</div>
 						<div>Name game: {name}</div>
-						<div>Winner: {winner}</div>
-						<div>Time: {Date.now()}</div>
+						<div>Winner: {winnerName}</div>
+						<div>Time: {time}</div>
 					</Grid>
 				</Grid>
 			</div>
