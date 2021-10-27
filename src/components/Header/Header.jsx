@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { AccountCircle } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 function Header() {
 	return (
@@ -17,7 +18,9 @@ function Header() {
 						noWrap
 						sx={{ display: { xs: 'none', sm: 'block' } }}
 					>
-						HomeWork 4
+						<Link to="/">Home </Link>
+						<Link to="/about">About</Link>
+						<Link to="/competition/34234">Game</Link>
 					</Typography>
 
 					<Box sx={{ flexGrow: 1 }} />
