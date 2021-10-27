@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Game from './pages/Game';
 import Error from './pages/Error';
+import Create from './pages/Create';
 
 function App() {
 	return (
@@ -23,18 +24,9 @@ function App() {
 							<Route exact path="/" component={Home} />
 							<Route path="/about" component={About} />
 							<Route path="/competition/:id" component={Game} />
+							<Route path="/create" component={Create} />
 							<Route component={Error} />
 						</Switch>
-						{/* <Grid container spacing={2}>
-							<Grid item xs={8} sx={{ bgcolor: '#e1e1e1', p: 2 }}>
-								<Search />
-								<CardsList />
-							</Grid>
-							<Grid item xs={4} sx={{ bgcolor: '#eee', p: 2 }}>
-								<Registration />
-								<WinnerInfo />
-							</Grid>
-						</Grid> */}
 					</Container>
 				</Provider>
 			</BrowserRouter>

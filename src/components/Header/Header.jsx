@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { AccountCircle } from '@mui/icons-material';
+import AddReactionIcon from '@mui/icons-material/AddReaction';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -25,15 +26,16 @@ function Header() {
 
 					<Box sx={{ flexGrow: 1 }} />
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-						<IconButton
+						{/* <IconButton
 							size="large"
 							edge="end"
 							aria-label="account of current user"
 							aria-haspopup="true"
 							color="inherit"
 						>
-							<AccountCircle />
-						</IconButton>
+							<AddReactionIcon />
+						</IconButton> */}
+						<Link to="/create">New competition</Link>
 					</Box>
 				</Toolbar>
 			</AppBar>

@@ -25,7 +25,7 @@ const schema = yup.object().shape({
 });
 
 function Registration() {
-	console.log('REGISTRATION COMPONENT');
+	// console.log('REGISTRATION COMPONENT');
 	const {
 		register,
 		handleSubmit,
