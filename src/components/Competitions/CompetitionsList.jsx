@@ -1,13 +1,17 @@
 import { Grid } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import CompetitionItem from './CompetitionItem';
 
 function CompetitionsList() {
-	const { competitions } = useSelector(
+	const { competitions, filteredCompetitions } = useSelector(
 		(state) => state.competitionsArr,
 	);
-	// console.log('STATE:', competitions);
+	console.log('STATE:', filteredCompetitions);
+
+	const newFilterdArr = filteredCompetitions.length
+		? filteredCompetitions
+		: competitions;
 	return (
 		<Grid
 			container
@@ -15,7 +19,7 @@ function CompetitionsList() {
 			justifyContent="space-between"
 			alignItems="center"
 		>
-			{competitions.map((comp) => (
+			{newFilterdArr.map((comp) => (
 				<Grid key={comp.id} item>
 					<CompetitionItem {...comp} />
 				</Grid>

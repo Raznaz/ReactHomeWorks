@@ -19,7 +19,9 @@ export const competitionsReducer = (state = initialState, action) => {
 				...state,
 				valueInp: action.payload.value,
 				filteredCompetitions: state.competitions.filter((comp) =>
-					comp.name.toLowerCase().includes(action.payload.value),
+					comp.name
+						.toLowerCase()
+						.includes(action.payload.value.toLowerCase()),
 				),
 			};
 		case CREATE_NEW_COMPETITION:
