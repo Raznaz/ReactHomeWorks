@@ -19,16 +19,9 @@ function CompetitionsList() {
 		? filteredCompetitions
 		: competitions;
 	return (
-		<Grid
-			container
-			spacing={4}
-			justifyContent="center"
-			alignItems="center"
-		>
+		<Grid container spacing={4}>
 			{newFilterdArr.map((comp) => (
-				<Grid key={comp.id} item>
-					<CompetitionItem {...comp} />
-				</Grid>
+				<CompetitionItem key={comp.id} {...comp} />
 			))}
 		</Grid>
 	);

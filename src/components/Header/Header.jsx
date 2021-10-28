@@ -4,9 +4,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { AccountCircle } from '@mui/icons-material';
 import AddReactionIcon from '@mui/icons-material/AddReaction';
 import { Link } from 'react-router-dom';
+import {
+	HomeMax,
+	HomeOutlined,
+	NewReleasesOutlined,
+} from '@mui/icons-material';
 
 function Header() {
 	return (
@@ -19,9 +23,9 @@ function Header() {
 						noWrap
 						sx={{ display: { xs: 'none', sm: 'block' } }}
 					>
-						<Link to="/">Home </Link>
-						<Link to="/about">About</Link>
-						<Link to="/competition/34234">Game</Link>
+						<Link to="/">
+							<HomeOutlined />
+						</Link>
 					</Typography>
 
 					<Box sx={{ flexGrow: 1 }} />
@@ -35,7 +39,16 @@ function Header() {
 						>
 							<AddReactionIcon />
 						</IconButton> */}
-						<Link to="/create">New competition</Link>
+						<Link
+							to="/create"
+							style={{
+								color: '#fff',
+								textDecoration: 'none',
+							}}
+						>
+							<span>NEW</span>
+							<NewReleasesOutlined />
+						</Link>
 					</Box>
 				</Toolbar>
 			</AppBar>

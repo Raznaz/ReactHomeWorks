@@ -15,7 +15,7 @@ function App() {
 			<BrowserRouter>
 				<Provider store={store}>
 					<Header />
-					<Container maxWidth="xl">
+					<Container maxWidth="xl" sx={{ mb: 3 }}>
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/about" component={About} />
