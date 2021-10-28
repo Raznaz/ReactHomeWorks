@@ -1,11 +1,7 @@
-import { Container, Grid } from '@mui/material';
+import { Container } from '@mui/material';
 import Header from './components/Header/Header';
-import Registration from './components/Registration/Registration';
-import WinnerInfo from './components/WinnerInfo/WinnerInfo';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
-import CardsList from './components/Cards/CardsList';
-import Search from './components/Search/Search';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
