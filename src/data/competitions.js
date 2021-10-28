@@ -45,7 +45,7 @@ export const competitions = [
 		winnerName: 'Pasha Kotik',
 	},
 	{
-		id: '74574575',
+		id: '7453454575',
 		name: 'eating burgers',
 		status: true,
 		img: `https://picsum.photos/400/400/?image=${Math.floor(

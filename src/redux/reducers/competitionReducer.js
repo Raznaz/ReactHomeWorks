@@ -2,14 +2,26 @@ import { competitions } from '../../data/competitions';
 import {
 	CHANGE_STATUS,
 	CREATE_NEW_COMPETITION,
+	FILTER_COMPETITIONS,
 } from '../actions/competitionActions';
 
 const initialState = {
 	competitions: competitions,
+	filteredCompetitions: [],
+	valueInp: '',
 };
 
 export const competitionsReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case FILTER_COMPETITIONS:
+			console.log('filter reducer: ', action.payload);
+			return {
+				...state,
+				valueInp: action.payload.value,
+				filteredCompetitions: state.competitions.filter((comp) =>
+					comp.name.toLowerCase().includes(action.payload.value),
+				),
+			};
 		case CREATE_NEW_COMPETITION:
 			console.log('CREATE NEW', state, action.payload);
 			return {
