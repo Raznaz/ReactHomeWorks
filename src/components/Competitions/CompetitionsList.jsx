@@ -1,13 +1,19 @@
 import { Grid } from '@mui/material';
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { filterCompetitions } from '../../redux/actions/competitionActions';
 import CompetitionItem from './CompetitionItem';
 
 function CompetitionsList() {
 	const { competitions, filteredCompetitions } = useSelector(
 		(state) => state.competitionsArr,
 	);
-	console.log('STATE:', filteredCompetitions);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(filterCompetitions(''));
+	}, [competitions]);
 
 	const newFilterdArr = filteredCompetitions.length
 		? filteredCompetitions
@@ -15,8 +21,8 @@ function CompetitionsList() {
 	return (
 		<Grid
 			container
-			spacing={2}
-			justifyContent="space-between"
+			spacing={4}
+			justifyContent="center"
 			alignItems="center"
 		>
 			{newFilterdArr.map((comp) => (
