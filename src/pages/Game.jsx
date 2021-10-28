@@ -11,14 +11,12 @@ function Game() {
 	const { competitions } = useSelector(
 		(state) => state.competitionsArr,
 	);
-	// console.log(competitions);
 
 	const { id } = useParams();
 	console.log(id);
 	const { status, name, winnerName, time } = competitions.find(
 		(comp) => comp.id === id,
 	);
-	// console.log(status);
 
 	if (!status) {
 		return (
@@ -26,12 +24,9 @@ function Game() {
 				<Grid container spacing={2}>
 					<Grid item xs={8} sx={{ bgcolor: '#e1e1e1', p: 2 }}>
 						<div>FALSE</div>
-						{/* <Search /> */}
 						<CardsList />
 					</Grid>
 					<Grid item xs={4} sx={{ bgcolor: '#eee', p: 2 }}>
-						{/* <Registration /> */}
-						{/* <WinnerInfo /> */}
 						<div>ID game: {id}</div>
 						<div>Name game: {name}</div>
 						<div>Winner: {winnerName}</div>
